@@ -1,8 +1,15 @@
-all: main.o Game.o
-	g++ -o example main.o Game.o -Wall -lsfml-graphics -lsfml-window -lsfml-system
+TARGET = Example
+CC     = g++
+FLAGS  = -lsfml-graphics -lsfml-window -lsfml-system
+WFLAGS = -Wall
 
-main.o: main.cpp
-	g++ -c main.cpp 
+SRC    = main.cpp ../src/Game.cpp
+OBJ    = $(SRC:.c=.o)
 
-Game.o:
-	g++ -c ../src/Game.cpp 
+$(TARGET): $(OBJ)
+	$(CC) -o $@ $^ $(WFLAGS) $(FLAGS)
+
+.PHONY: clean
+
+clean:
+	rm -f $(OBJ) $(TARGET)

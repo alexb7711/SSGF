@@ -27,8 +27,8 @@ class Game
 
     void run();
 
-    // void exitGame();
-    // ~Game();
+    void exitGame();
+    ~Game();
 
   private:
     // Private Member Varibales
@@ -37,7 +37,7 @@ class Game
     bool m_quit = false;
 
     // Private Methods
-    // void handleEvent();
+    void handleEvent();
 };
 
 #endif
