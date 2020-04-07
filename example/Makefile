@@ -1,9 +1,9 @@
 TARGET = Example
 CC     = g++
 FLAGS  = -lsfml-graphics -lsfml-window -lsfml-system
-WFLAGS = -Wall
+WFLAGS = -Wall -g
 
-SRC    = main.cpp ../src/Game.cpp
+SRC    = main.cpp ../src/Game.cpp ../src/State/DefaultState.cpp 
 OBJ    = $(SRC:.c=.o)
 
 $(TARGET): $(OBJ)

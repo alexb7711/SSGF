@@ -1,22 +1,27 @@
 #include "Game.hpp"
 
+//--------//
+// Public //
+//--------//
+
 //===============================================================================
 //
 Game::Game():
   m_window(new sf::RenderWindow(sf::VideoMode(1280, 720), "Game Title"))
 {
+  m_state_stack.push(new DefaultState(this));
   m_window->setPosition({m_window->getPosition().x, 0});
   m_window->setFramerateLimit(60);
+  return;
 }
 
 //===============================================================================
 //
 void Game::run()
 {
-  sf::CircleShape shape(100.f);
-  shape.setFillColor(sf::Color::Green);
-
-  while (m_window->isOpen() && !m_quit)
+  printf("%i \n\n\n\n\n", m_state_stack.size());
+  // while (m_window->isOpen() && !m_quit)
+  while (m_window->isOpen() && !m_state_stack.empty())
   {
     sf::Event event;
     while (m_window->pollEvent(event))
@@ -25,10 +30,24 @@ void Game::run()
             m_window->close();
     }
 
-    m_window->clear();
-    m_window->draw(shape);
+    m_state_stack.top()->renderState(m_window);
     m_window->display();
   }
+
+  return;
+}
+
+//===============================================================================
+//
+void Game::pushStack()
+{}
+
+//===============================================================================
+//
+void Game::setPopStack()
+{
+  m_popStack = true;
+  return;
 }
 
 //===============================================================================
@@ -39,4 +58,19 @@ void Game::exitGame()
 //===============================================================================
 //
 Game::~Game()
+{}
+
+
+//---------//
+// Private //
+//---------//
+
+//===============================================================================
+//
+void Game::handleEvent()
+{}
+
+//===============================================================================
+//
+void Game::popStack()
 {}

@@ -10,12 +10,14 @@
 
 // C/C++ Standard Library
 #include <memory>
-#include <vector>
+#include <stack>
 
 // SFML Libraries
 #include <SFML/Graphics.hpp>
 
 // Custom Header Files
+#include "State/BaseState.hpp"
+#include "State/DefaultState.hpp"
 
 //===============================================================================
 //
@@ -27,6 +29,9 @@ class Game
 
     void run();
 
+    void pushStack();
+    void setPopStack();
+
     void exitGame();
     ~Game();
 
@@ -34,10 +39,14 @@ class Game
     // Private Member Varibales
     sf::RenderWindow* m_window;
 
-    bool m_quit = false;
+    std::stack<BaseState*> m_state_stack;
+
+    bool m_quit     = false;
+    bool m_popStack = false;
 
     // Private Methods
     void handleEvent();
+    void popStack();
 };
 
 #endif
