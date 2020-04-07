@@ -15,6 +15,7 @@ Resources that I utilize will be referenced below.
 
 # Resources
 [Game Design Patterns](http://gameprogrammingpatterns.com/contents.html)
+[Practical Makefiles](http://nuclear.mutantstargoat.com/articles/make/)
 [SFML-Game-Framework by Hopson97](https://github.com/Hopson97/SFML-Game-Framework)
 [SFML Webstie](https://www.sfml-dev.org/learn.php)
 [Tutorial: Basic Game Engine](https://github.com/SFML/SFML/wiki/Tutorial%3A-Basic-Game-Engine)
