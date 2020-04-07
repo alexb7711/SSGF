@@ -19,8 +19,6 @@ Game::Game():
 //
 void Game::run()
 {
-  printf("%i \n\n\n\n\n", m_state_stack.size());
-  // while (m_window->isOpen() && !m_quit)
   while (m_window->isOpen() && !m_state_stack.empty())
   {
     sf::Event event;
@@ -30,7 +28,12 @@ void Game::run()
             m_window->close();
     }
 
+    sf::Time temp = sf::seconds(10);
+
+    m_state_stack.top()->handleInput();
+    m_state_stack.top()->updateState(temp);
     m_state_stack.top()->renderState(m_window);
+
     m_window->display();
   }
 

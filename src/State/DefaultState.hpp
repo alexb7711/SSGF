@@ -29,6 +29,7 @@ public:
 private:
   // Private Member Variables
   sf::CircleShape m_circle;
+  sf::Vector2f    m_circle_pos;
 };
 
 #endif
