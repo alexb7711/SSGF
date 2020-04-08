@@ -3,7 +3,11 @@ CC     = g++
 FLAGS  = -lsfml-graphics -lsfml-window -lsfml-system
 WFLAGS = -Wall -g
 
-SRC    = main.cpp ../src/Game.cpp ../src/State/DefaultState.cpp 
+SRC    = main.cpp \
+	 ../src/Game.cpp \
+	 ../src/State/DefaultState.cpp \
+	 ../src/GUI/Button.cpp
+
 OBJ    = $(SRC:.c=.o)
 
 $(TARGET): $(OBJ)

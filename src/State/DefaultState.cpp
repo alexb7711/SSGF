@@ -11,7 +11,7 @@ DefaultState::DefaultState(Game* game):
   m_circle_pos = m_circle.getPosition();
   return;
 }
-
+  
 //===============================================================================
 //
 void DefaultState::updateState(sf::Time delta_time)
@@ -26,6 +26,8 @@ void DefaultState::renderState(sf::RenderTarget* renderer)
 {
   renderer->clear();
   renderer->draw(m_circle);
+
+  m_button.render(renderer);
   return;
 }
 

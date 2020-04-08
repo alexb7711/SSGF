@@ -1,0 +1,72 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+$(TARGET)	example/Makefile	/^$(TARGET): $(OBJ)$/;"	t
+BaseState	src/State/BaseState.hpp	/^  BaseState(Game* game):$/;"	f	class:BaseState
+BaseState	src/State/BaseState.hpp	/^class BaseState $/;"	c
+Button	src/GUI/Button.cpp	/^  Button::Button():$/;"	f	class:GUI::Button
+Button	src/GUI/Button.hpp	/^class Button : public Widget$/;"	c	namespace:GUI
+CC	example/Makefile	/^CC     = g++$/;"	m
+DefaultState	src/State/DefaultState.cpp	/^DefaultState::DefaultState(Game* game):$/;"	f	class:DefaultState
+DefaultState	src/State/DefaultState.hpp	/^class DefaultState : public BaseState$/;"	c
+Development Goals	README.md	/^# Development Goals$/;"	c
+Disclamer	README.md	/^# Disclamer$/;"	c
+GUI	src/GUI/Button.cpp	/^namespace GUI$/;"	n	file:
+GUI	src/GUI/Button.hpp	/^namespace GUI$/;"	n
+GUI	src/GUI/Widget.hpp	/^namespace GUI$/;"	n
+Game	src/Game.cpp	/^Game::Game():$/;"	f	class:Game
+Game	src/Game.hpp	/^class Game $/;"	c
+OBJ	example/Makefile	/^OBJ    = $(SRC:.c=.o)$/;"	m
+Resources	README.md	/^# Resources$/;"	c
+SRC	example/Makefile	/^SRC    = main.cpp \\$/;"	m
+SSGF [Super Small Game Framework]	README.md	/^# SSGF [Super Small Game Framework]$/;"	c
+TARGET	example/Makefile	/^TARGET = Example$/;"	m
+WFLAGS	example/Makefile	/^WFLAGS = -Wall -g$/;"	m
+Widget	src/GUI/Widget.hpp	/^  Widget(std::string type):$/;"	f	class:GUI::Widget
+Widget	src/GUI/Widget.hpp	/^class Widget $/;"	c	namespace:GUI
+_BASE_STATE_H_	src/State/BaseState.hpp	/^#define _BASE_STATE_H_ /;"	d
+_BUTTON_H_	src/GUI/Button.hpp	/^#define _BUTTON_H_ /;"	d
+_DEFAULT_STATE_H_	src/State/DefaultState.hpp	/^#define _DEFAULT_STATE_H_ /;"	d
+_GAME_HPP_	src/Game.hpp	/^#define _GAME_HPP_ /;"	d
+_WIDGET_H_	src/GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
+clean	example/Makefile	/^clean:$/;"	t
+exitGame	src/Game.cpp	/^void Game::exitGame()$/;"	f	class:Game	typeref:typename:void
+getPosition	src/GUI/Button.cpp	/^  sf::Vector2f Button::getPosition()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
+getSize	src/GUI/Button.cpp	/^  sf::Vector2f Button::getSize()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
+getType	src/GUI/Button.cpp	/^  std::string Button::getType()$/;"	f	class:GUI::Button	typeref:typename:std::string
+handleEvent	src/Game.cpp	/^void Game::handleEvent()$/;"	f	class:Game	typeref:typename:void
+handleEvents	src/GUI/Button.cpp	/^  void Button::handleEvents(sf::Event e)$/;"	f	class:GUI::Button	typeref:typename:void
+handleEvents	src/State/BaseState.hpp	/^  virtual void handleEvents(sf::Event e)                {}$/;"	f	class:BaseState	typeref:typename:void
+handleEvents	src/State/DefaultState.cpp	/^void DefaultState::handleEvents(sf::Event e)$/;"	f	class:DefaultState	typeref:typename:void
+handleInput	src/State/DefaultState.cpp	/^void DefaultState::handleInput()$/;"	f	class:DefaultState	typeref:typename:void
+isClicked	src/GUI/Button.cpp	/^  void Button::isClicked()$/;"	f	class:GUI::Button	typeref:typename:void
+isHovering	src/GUI/Button.cpp	/^  void Button::isHovering()$/;"	f	class:GUI::Button	typeref:typename:void
+m_button	src/GUI/Button.hpp	/^  sf::RectangleShape m_button;$/;"	m	class:GUI::Button	typeref:typename:sf::RectangleShape
+m_button	src/State/DefaultState.hpp	/^  GUI::Button     m_button;$/;"	m	class:DefaultState	typeref:typename:GUI::Button
+m_circle	src/State/DefaultState.hpp	/^  sf::CircleShape m_circle;$/;"	m	class:DefaultState	typeref:typename:sf::CircleShape
+m_circle_pos	src/State/DefaultState.hpp	/^  sf::Vector2f    m_circle_pos;$/;"	m	class:DefaultState	typeref:typename:sf::Vector2f
+m_popStack	src/Game.hpp	/^    bool m_popStack = false;$/;"	m	class:Game	typeref:typename:bool
+m_quit	src/Game.hpp	/^    bool m_quit     = false;$/;"	m	class:Game	typeref:typename:bool
+m_state_stack	src/Game.hpp	/^    std::stack<BaseState*> m_state_stack;$/;"	m	class:Game	typeref:typename:std::stack<BaseState * >
+m_widget_type	src/GUI/Widget.hpp	/^  std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
+m_window	src/Game.hpp	/^    sf::RenderWindow* m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
+main	example/main.cpp	/^int main()$/;"	f	typeref:typename:int
+p_game	src/State/BaseState.hpp	/^  Game* p_game;$/;"	m	class:BaseState	typeref:typename:Game *
+popStack	src/Game.cpp	/^void Game::popStack()$/;"	f	class:Game	typeref:typename:void
+pushStack	src/Game.cpp	/^void Game::pushStack()$/;"	f	class:Game	typeref:typename:void
+render	src/GUI/Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
+renderState	src/State/DefaultState.cpp	/^void DefaultState::renderState(sf::RenderTarget* renderer)$/;"	f	class:DefaultState	typeref:typename:void
+run	src/Game.cpp	/^void Game::run()$/;"	f	class:Game	typeref:typename:void
+setPopStack	src/Game.cpp	/^void Game::setPopStack()$/;"	f	class:Game	typeref:typename:void
+setPosition	src/GUI/Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$/;"	f	class:GUI::Button	typeref:typename:void
+setSize	src/GUI/Button.cpp	/^  void Button::setSize(sf::Vector2f size)$/;"	f	class:GUI::Button	typeref:typename:void
+updateState	src/State/BaseState.hpp	/^  virtual void updateState(sf::Time delta_time)         {}$/;"	f	class:BaseState	typeref:typename:void
+updateState	src/State/DefaultState.cpp	/^void DefaultState::updateState(sf::Time delta_time)$/;"	f	class:DefaultState	typeref:typename:void
+~Button	src/GUI/Button.cpp	/^  Button::~Button()$/;"	f	class:GUI::Button
+~DefaultState	src/State/DefaultState.cpp	/^DefaultState::~DefaultState()$/;"	f	class:DefaultState
+~Game	src/Game.cpp	/^Game::~Game()$/;"	f	class:Game
