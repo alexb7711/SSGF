@@ -6,7 +6,8 @@ WFLAGS = -Wall -g
 SRC    = main.cpp \
 	 ../src/Game.cpp \
 	 ../src/State/DefaultState.cpp \
-	 ../src/GUI/Button.cpp
+	 ../src/GUI/Button.cpp \
+	 ../src/GUI/CenterStackWidget.cpp \
 
 OBJ    = $(SRC:.c=.o)
 
