@@ -12,8 +12,9 @@
 
 // Custom Header Files
 #include "BaseState.hpp"
-#include "../GUI/Widget.hpp"
-#include "../GUI/Button.hpp"
+#include "../GUI/CenterStackWidget.hpp"
+// #include "../GUI/Widget.hpp"
+// #include "../GUI/Button.hpp"
 
 class Widget;
 
@@ -34,8 +35,9 @@ private:
   // Private Member Variables
   sf::CircleShape m_circle;
   sf::Vector2f    m_circle_pos;
-
-  GUI::Button     m_button;
+  
+  GUI::CenterStackWidget m_stack;
+  // GUI::Button     m_button;
 };
 
 #endif
