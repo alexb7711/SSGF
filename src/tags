@@ -30,7 +30,7 @@ _DEFAULT_STATE_H_	State/DefaultState.hpp	/^#define _DEFAULT_STATE_H_ /;"	d
 _GAME_HPP_	Game.hpp	/^#define _GAME_HPP_ /;"	d
 _WIDGET_H_	GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
 addWidget	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::addWidget()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
-calculatePositions	GUI/CenterStackWidget.cpp	/^void calculatePositions()$/;"	f	namespace:GUI	typeref:typename:void
+calculatePositions	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::calculatePositions()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 exitGame	Game.cpp	/^void Game::exitGame()$/;"	f	class:Game	typeref:typename:void
 getPosition	GUI/Button.cpp	/^  sf::Vector2f Button::getPosition()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
 getSize	GUI/Button.cpp	/^  sf::Vector2f Button::getSize()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
