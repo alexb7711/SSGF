@@ -29,10 +29,10 @@ class Game
     // Public Methods
     Game();
 
-    void run();
-
-    void pushStack();
-    void setPopStack();
+    void              run();
+    void              pushStack();
+    void              setPopStack();
+    sf::RenderWindow* getWindow();
 
     void exitGame();
     ~Game();

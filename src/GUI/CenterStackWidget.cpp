@@ -1,11 +1,16 @@
 #include "CenterStackWidget.hpp"
 
+//--------//
+// PUBLIC //
+//--------//
+
 namespace GUI
 {
 
 //===============================================================================
 //
-CenterStackWidget::CenterStackWidget()
+CenterStackWidget::CenterStackWidget(sf::RenderWindow* window):
+  p_window(window)
 {
   p_widget_vector.push_back(new Button());
   return;
@@ -20,6 +25,13 @@ void CenterStackWidget::setTitle(const std::string& title)
 //
 void CenterStackWidget::addWidget()
 {}
+  
+//===============================================================================
+//
+void CenterStackWidget::update()
+{
+  this->calculatePositions();
+}
 
 //===============================================================================
 //
@@ -41,5 +53,16 @@ void CenterStackWidget::handleEvents()
 //
 CenterStackWidget::~CenterStackWidget()
 {}
+
+//---------//
+// PRIVATE //
+//---------//
+  
+//===============================================================================
+//
+void CenterStackWidget::calculatePositions()
+{
+  
+}
 
 }

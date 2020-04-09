@@ -10,7 +10,7 @@ BaseState	State/BaseState.hpp	/^  BaseState(Game* game):$/;"	f	class:BaseState
 BaseState	State/BaseState.hpp	/^class BaseState $/;"	c
 Button	GUI/Button.cpp	/^  Button::Button():$/;"	f	class:GUI::Button
 Button	GUI/Button.hpp	/^class Button : public Widget$/;"	c	namespace:GUI
-CenterStackWidget	GUI/CenterStackWidget.cpp	/^CenterStackWidget::CenterStackWidget()$/;"	f	class:GUI::CenterStackWidget
+CenterStackWidget	GUI/CenterStackWidget.cpp	/^CenterStackWidget::CenterStackWidget(sf::RenderWindow* window):$/;"	f	class:GUI::CenterStackWidget
 CenterStackWidget	GUI/CenterStackWidget.hpp	/^class CenterStackWidget$/;"	c	namespace:GUI
 DefaultState	State/DefaultState.cpp	/^DefaultState::DefaultState(Game* game):$/;"	f	class:DefaultState
 DefaultState	State/DefaultState.hpp	/^class DefaultState : public BaseState$/;"	c
@@ -30,10 +30,12 @@ _DEFAULT_STATE_H_	State/DefaultState.hpp	/^#define _DEFAULT_STATE_H_ /;"	d
 _GAME_HPP_	Game.hpp	/^#define _GAME_HPP_ /;"	d
 _WIDGET_H_	GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
 addWidget	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::addWidget()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+calculatePositions	GUI/CenterStackWidget.cpp	/^void calculatePositions()$/;"	f	namespace:GUI	typeref:typename:void
 exitGame	Game.cpp	/^void Game::exitGame()$/;"	f	class:Game	typeref:typename:void
 getPosition	GUI/Button.cpp	/^  sf::Vector2f Button::getPosition()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
 getSize	GUI/Button.cpp	/^  sf::Vector2f Button::getSize()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
 getType	GUI/Button.cpp	/^  std::string Button::getType()$/;"	f	class:GUI::Button	typeref:typename:std::string
+getWindow	Game.cpp	/^sf::RenderWindow* Game::getWindow()$/;"	f	class:Game	typeref:typename:sf::RenderWindow *
 handleEvent	Game.cpp	/^void Game::handleEvent()$/;"	f	class:Game	typeref:typename:void
 handleEvents	GUI/Button.cpp	/^  void Button::handleEvents(sf::Event e)$/;"	f	class:GUI::Button	typeref:typename:void
 handleEvents	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::handleEvents()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
@@ -53,6 +55,7 @@ m_widget_type	GUI/Widget.hpp	/^  std::string  m_widget_type;$/;"	m	class:GUI::Wi
 m_window	Game.hpp	/^    sf::RenderWindow* m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
 p_game	State/BaseState.hpp	/^  Game* p_game;$/;"	m	class:BaseState	typeref:typename:Game *
 p_widget_vector	GUI/CenterStackWidget.hpp	/^  std::vector<Widget*> p_widget_vector;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:std::vector<Widget * >
+p_window	GUI/CenterStackWidget.hpp	/^  sf::RenderWindow*    p_window;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:sf::RenderWindow *
 popStack	Game.cpp	/^void Game::popStack()$/;"	f	class:Game	typeref:typename:void
 pushStack	Game.cpp	/^void Game::pushStack()$/;"	f	class:Game	typeref:typename:void
 render	GUI/Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
@@ -64,6 +67,7 @@ setPosition	GUI/Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$
 setSize	GUI/Button.cpp	/^  void Button::setSize(sf::Vector2f size)$/;"	f	class:GUI::Button	typeref:typename:void
 setTitle	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::setTitle(const std::string& title)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 uint	GUI/CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
+update	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 updateState	State/BaseState.hpp	/^  virtual void updateState(sf::Time delta_time)         {}$/;"	f	class:BaseState	typeref:typename:void
 updateState	State/DefaultState.cpp	/^void DefaultState::updateState(sf::Time delta_time)$/;"	f	class:DefaultState	typeref:typename:void
 ~Button	GUI/Button.cpp	/^  Button::~Button()$/;"	f	class:GUI::Button

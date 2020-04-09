@@ -1,4 +1,4 @@
-TARGET = Example
+TARGET = example
 CC     = g++
 FLAGS  = -lsfml-graphics -lsfml-window -lsfml-system
 WFLAGS = -Wall -g

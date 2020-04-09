@@ -29,19 +29,24 @@ namespace GUI
 class CenterStackWidget
 {
 public: 
-  CenterStackWidget();
+  // Public Methods
+  CenterStackWidget(sf::RenderWindow* window);
 
   void setTitle(const std::string& title);
   void addWidget();
+  void update();
   void render(sf::RenderTarget* renderer);
   void handleEvents();
 
   ~CenterStackWidget();
 
 private:
+  // Private Methods
+  void calculatePositions();
+
+  // Private Member Variables
+  sf::RenderWindow*    p_window;
   std::vector<Widget*> p_widget_vector;
-
-
 };
 
 }

@@ -5,7 +5,8 @@
 //
 DefaultState::DefaultState(Game* game):
   BaseState(game),
-  m_circle(10.f)
+  m_circle(10.f),
+  m_stack(game->getWindow())
 {
   m_circle.setFillColor(sf::Color::Green);
   m_circle_pos = m_circle.getPosition();
@@ -17,6 +18,7 @@ DefaultState::DefaultState(Game* game):
 void DefaultState::updateState(sf::Time delta_time)
 {
   m_circle.setPosition(m_circle_pos);
+  m_stack.update();
   return;
 }
 
