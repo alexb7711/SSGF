@@ -25,7 +25,8 @@ public:
   Button();
   void         render(sf::RenderTarget* renderer)  override;
   void         handleEvents(sf::Event e)           override;
-    
+  void         update();
+
   std::string  getType()                           override;
   sf::Vector2f getPosition()                       override;
   void         setPosition(sf::Vector2f& position) override;
@@ -38,12 +39,12 @@ public:
 
 private:
   // Private Methods
-  void         isHovering();
-  void         isClicked();
+  bool isHovering();
+  void isClicked();
+  void execute();
 
   // Private Member Variables
   sf::RectangleShape m_button;
-
 };
 
 }

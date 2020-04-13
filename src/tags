@@ -31,6 +31,7 @@ _GAME_HPP_	Game.hpp	/^#define _GAME_HPP_ /;"	d
 _WIDGET_H_	GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
 addWidget	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::addWidget()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 calculatePositions	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::calculatePositions()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+execute	GUI/Button.cpp	/^  void Button::execute()$/;"	f	class:GUI::Button	typeref:typename:void
 exitGame	Game.cpp	/^void Game::exitGame()$/;"	f	class:Game	typeref:typename:void
 getPosition	GUI/Button.cpp	/^  sf::Vector2f Button::getPosition()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
 getSize	GUI/Button.cpp	/^  sf::Vector2f Button::getSize()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
@@ -43,8 +44,9 @@ handleEvents	State/BaseState.hpp	/^  virtual void handleEvents(sf::Event e)     
 handleEvents	State/DefaultState.cpp	/^void DefaultState::handleEvents(sf::Event e)$/;"	f	class:DefaultState	typeref:typename:void
 handleInput	State/DefaultState.cpp	/^void DefaultState::handleInput()$/;"	f	class:DefaultState	typeref:typename:void
 isClicked	GUI/Button.cpp	/^  void Button::isClicked()$/;"	f	class:GUI::Button	typeref:typename:void
-isHovering	GUI/Button.cpp	/^  void Button::isHovering()$/;"	f	class:GUI::Button	typeref:typename:void
+isHovering	GUI/Button.cpp	/^  bool Button::isHovering()$/;"	f	class:GUI::Button	typeref:typename:bool
 m_button	GUI/Button.hpp	/^  sf::RectangleShape m_button;$/;"	m	class:GUI::Button	typeref:typename:sf::RectangleShape
+m_button_spacing	GUI/CenterStackWidget.hpp	/^  float                m_button_spacing;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:float
 m_circle	State/DefaultState.hpp	/^  sf::CircleShape m_circle;$/;"	m	class:DefaultState	typeref:typename:sf::CircleShape
 m_circle_pos	State/DefaultState.hpp	/^  sf::Vector2f    m_circle_pos;$/;"	m	class:DefaultState	typeref:typename:sf::Vector2f
 m_popStack	Game.hpp	/^    bool m_popStack = false;$/;"	m	class:Game	typeref:typename:bool
@@ -54,7 +56,7 @@ m_state_stack	Game.hpp	/^    std::stack<BaseState*> m_state_stack;$/;"	m	class:G
 m_widget_type	GUI/Widget.hpp	/^  std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
 m_window	Game.hpp	/^    sf::RenderWindow* m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
 p_game	State/BaseState.hpp	/^  Game* p_game;$/;"	m	class:BaseState	typeref:typename:Game *
-p_widget_vector	GUI/CenterStackWidget.hpp	/^  std::vector<Widget*> p_widget_vector;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:std::vector<Widget * >
+p_widget_vector	GUI/CenterStackWidget.hpp	/^  std::vector<Button*> p_widget_vector;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:std::vector<Button * >
 p_window	GUI/CenterStackWidget.hpp	/^  sf::RenderWindow*    p_window;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:sf::RenderWindow *
 popStack	Game.cpp	/^void Game::popStack()$/;"	f	class:Game	typeref:typename:void
 pushStack	Game.cpp	/^void Game::pushStack()$/;"	f	class:Game	typeref:typename:void
@@ -67,6 +69,7 @@ setPosition	GUI/Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$
 setSize	GUI/Button.cpp	/^  void Button::setSize(sf::Vector2f size)$/;"	f	class:GUI::Button	typeref:typename:void
 setTitle	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::setTitle(const std::string& title)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 uint	GUI/CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
+update	GUI/Button.cpp	/^  void Button::update()$/;"	f	class:GUI::Button	typeref:typename:void
 update	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 updateState	State/BaseState.hpp	/^  virtual void updateState(sf::Time delta_time)         {}$/;"	f	class:BaseState	typeref:typename:void
 updateState	State/DefaultState.cpp	/^void DefaultState::updateState(sf::Time delta_time)$/;"	f	class:DefaultState	typeref:typename:void

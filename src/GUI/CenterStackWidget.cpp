@@ -10,7 +10,8 @@ namespace GUI
 //===============================================================================
 //
 CenterStackWidget::CenterStackWidget(sf::RenderWindow* window):
-  p_window(window)
+  p_window(window),
+  m_button_spacing(70.f)
 {
   p_widget_vector.push_back(new Button());
   p_widget_vector.push_back(new Button());
@@ -32,6 +33,10 @@ void CenterStackWidget::addWidget()
 void CenterStackWidget::update()
 {
   this->calculatePositions();
+
+  for (uint item = 0; item < p_widget_vector.size(); ++item)
+
+      p_widget_vector[item]->update();
 }
 
 //===============================================================================
@@ -60,18 +65,18 @@ CenterStackWidget::~CenterStackWidget()
 //---------//
   
 //===============================================================================
-//
+// Calculate the positions of the buttons.
 void CenterStackWidget::calculatePositions()
 {
   uint vector_size         = p_widget_vector.size();
   sf::Vector2u window_size = p_window->getSize();
 
   sf::Vector2f window_pos;
-  window_pos.x = window_size.x/2;
 
   for (uint item = 0; item < vector_size; ++item)
   {
-    window_pos.y = window_size.y/2 + item * 55.f;
+    window_pos.x = float(window_size.x/2) - p_widget_vector[item]->getSize().x/2;
+    window_pos.y = window_size.y/4 + item * m_button_spacing;
     p_widget_vector[item]->setPosition(window_pos);
   }
 }
