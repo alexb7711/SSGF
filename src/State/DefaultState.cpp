@@ -15,7 +15,7 @@ DefaultState::DefaultState(Game* game):
   
 //===============================================================================
 //
-void DefaultState::updateState(sf::Time delta_time)
+void DefaultState::updateState()
 {
   m_circle.setPosition(m_circle_pos);
   m_stack.update();

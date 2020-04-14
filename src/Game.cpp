@@ -19,22 +19,35 @@ Game::Game():
 //
 void Game::run()
 {
+    sf::Time elapsed_time        = sf::Time::Zero;
+    sf::Time lag                 = sf::Time::Zero;
+    int milliseconds_per_update  = 16;
+
+    sf::Clock clock;
+
   while (m_window->isOpen() && !m_state_stack.empty())
   {
-    sf::Event event;
-    while (m_window->pollEvent(event))
+    // Reset the timer
+    clock.restart();
+
+    // Catch the game up
+    while (lag.asMilliseconds() >= milliseconds_per_update)
     {
-        if (event.type == sf::Event::Closed)
-            m_window->close();
+      m_state_stack.top()->updateState();
+      lag -= sf::milliseconds(milliseconds_per_update);
     }
 
-    sf::Time temp = sf::seconds(10);
+    this->handleEvent();
 
     m_state_stack.top()->handleInput();
-    m_state_stack.top()->updateState(temp);
     m_state_stack.top()->renderState(m_window);
 
     m_window->display();
+    
+    // Determine the amount of time that has elapsed
+    elapsed_time = clock.getElapsedTime();
+    lag         += elapsed_time;
+
   }
 
   return;
@@ -78,7 +91,16 @@ Game::~Game()
 //===============================================================================
 //
 void Game::handleEvent()
-{}
+{
+    sf::Event event;
+    while (m_window->pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+            m_window->close();
+    }
+
+    return;
+}
 
 //===============================================================================
 //

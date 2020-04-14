@@ -18,7 +18,6 @@
 // Custom Header Files
 #include "State/BaseState.hpp"
 #include "State/DefaultState.hpp"
-// #include "GUI/Widget.hpp"
 #include "GUI/Button.hpp"
 
 //===============================================================================
