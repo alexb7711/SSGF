@@ -37,6 +37,10 @@ class Game
     ~Game();
 
   private:
+    // Private Methods
+    void handleEvent();
+    void popStack();
+
     // Private Member Varibales
     sf::RenderWindow* m_window;
 
@@ -44,10 +48,6 @@ class Game
 
     bool m_quit     = false;
     bool m_popStack = false;
-
-    // Private Methods
-    void handleEvent();
-    void popStack();
 };
 
 #endif
