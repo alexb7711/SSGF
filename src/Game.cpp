@@ -50,7 +50,7 @@ void Game::run()
     elapsed_time = clock.getElapsedTime();
     lag         += elapsed_time;
 
-    printf("FPS = %d\n", 1000/elapsed_time.asMilliseconds());
+    // printf("FPS = %d\n", 1000/elapsed_time.asMilliseconds());
 
   }
 

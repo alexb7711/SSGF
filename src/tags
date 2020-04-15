@@ -6,7 +6,7 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
-BaseState	State/BaseState.hpp	/^  BaseState(Game* game):$/;"	f	class:BaseState
+BaseState	State/BaseState.hpp	/^    BaseState(Game* game):$/;"	f	class:BaseState
 BaseState	State/BaseState.hpp	/^class BaseState $/;"	c
 Button	GUI/Button.cpp	/^  Button::Button():$/;"	f	class:GUI::Button
 Button	GUI/Button.hpp	/^class Button : public Widget$/;"	c	namespace:GUI
@@ -23,6 +23,10 @@ GUI	GUI/CenterStackWidget.hpp	/^namespace GUI$/;"	n
 GUI	GUI/Widget.hpp	/^namespace GUI$/;"	n
 Game	Game.cpp	/^Game::Game():$/;"	f	class:Game
 Game	Game.hpp	/^class Game $/;"	c
+ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^    ResourceContainer()$/;"	f	class:ResourceContainer
+ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^class ResourceContainer$/;"	c
+ResourceHandler	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler::ResourceHandler()$/;"	f	class:ResourceHandler
+ResourceHandler	ResourceHandler/ResourceHandler.hpp	/^class ResourceHandler$/;"	c
 Widget	GUI/Widget.hpp	/^  Widget(std::string type):$/;"	f	class:GUI::Widget
 Widget	GUI/Widget.hpp	/^class Widget $/;"	c	namespace:GUI
 _BASE_STATE_H_	State/BaseState.hpp	/^#define _BASE_STATE_H_ /;"	d
@@ -31,20 +35,28 @@ _CENTER_STACK_WIDGETS_H_	GUI/CenterStackWidget.hpp	/^#define _CENTER_STACK_WIDGE
 _DEFAULT_STATE_H_	State/DefaultState.hpp	/^#define _DEFAULT_STATE_H_ /;"	d
 _FPS_COUNTER_H_	GUI/FPSMonitor.hpp	/^#define _FPS_COUNTER_H_$/;"	d
 _GAME_HPP_	Game.hpp	/^#define _GAME_HPP_ /;"	d
+_RESOURCE_CONTAINER_HPP_	ResourceHandler/ResourceContainer.hpp	/^#define _RESOURCE_CONTAINER_HPP_ /;"	d
+_RESOURCE_HANDLER_HPP_	ResourceHandler/ResourceHandler.hpp	/^#define _RESOURCE_HANDLER_HPP_ /;"	d
 _WIDGET_H_	GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
+add	ResourceHandler/ResourceContainer.hpp	/^    void add(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 addWidget	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::addWidget()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 calculatePositions	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::calculatePositions()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 draw	GUI/FPSMonitor.cpp	/^void FPSMonitor::draw(sf::RenderTarget& renderer)$/;"	f	class:FPSMonitor	typeref:typename:void
 execute	GUI/Button.cpp	/^  void Button::execute()$/;"	f	class:GUI::Button	typeref:typename:void
+exists	ResourceHandler/ResourceContainer.hpp	/^    bool exists (std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:bool
 exitGame	Game.cpp	/^void Game::exitGame()$/;"	f	class:Game	typeref:typename:void
+font	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Font>        font;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Font>
+get	ResourceHandler/ResourceContainer.hpp	/^    const Resource* get(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:const Resource *
+getFullName	ResourceHandler/ResourceContainer.hpp	/^    void getFullName(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 getPosition	GUI/Button.cpp	/^  sf::Vector2f Button::getPosition()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
+getPtr	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler* ResourceHandler::getPtr()$/;"	f	class:ResourceHandler	typeref:typename:ResourceHandler *
 getSize	GUI/Button.cpp	/^  sf::Vector2f Button::getSize()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
 getType	GUI/Button.cpp	/^  std::string Button::getType()$/;"	f	class:GUI::Button	typeref:typename:std::string
 getWindow	Game.cpp	/^sf::RenderWindow* Game::getWindow()$/;"	f	class:Game	typeref:typename:sf::RenderWindow *
 handleEvent	Game.cpp	/^void Game::handleEvent()$/;"	f	class:Game	typeref:typename:void
 handleEvents	GUI/Button.cpp	/^  void Button::handleEvents(sf::Event e)$/;"	f	class:GUI::Button	typeref:typename:void
 handleEvents	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::handleEvents()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
-handleEvents	State/BaseState.hpp	/^  virtual void handleEvents(sf::Event e)                {}$/;"	f	class:BaseState	typeref:typename:void
+handleEvents	State/BaseState.hpp	/^    virtual void handleEvents(sf::Event e)                {}$/;"	f	class:BaseState	typeref:typename:void
 handleEvents	State/DefaultState.cpp	/^void DefaultState::handleEvents(sf::Event e)$/;"	f	class:DefaultState	typeref:typename:void
 handleInput	State/DefaultState.cpp	/^void DefaultState::handleInput()$/;"	f	class:DefaultState	typeref:typename:void
 isClicked	GUI/Button.cpp	/^  void Button::isClicked()$/;"	f	class:GUI::Button	typeref:typename:void
@@ -54,22 +66,27 @@ m_button_spacing	GUI/CenterStackWidget.hpp	/^  float                m_button_spa
 m_circle	State/DefaultState.hpp	/^  sf::CircleShape m_circle;$/;"	m	class:DefaultState	typeref:typename:sf::CircleShape
 m_circle_pos	State/DefaultState.hpp	/^  sf::Vector2f    m_circle_pos;$/;"	m	class:DefaultState	typeref:typename:sf::Vector2f
 m_delayTimer	GUI/FPSMonitor.hpp	/^        sf::Clock m_delayTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
+m_extension	ResourceHandler/ResourceContainer.hpp	/^    const std::string m_extension;$/;"	m	class:ResourceContainer	typeref:typename:const std::string
+m_folder	ResourceHandler/ResourceContainer.hpp	/^    const std::string m_folder;$/;"	m	class:ResourceContainer	typeref:typename:const std::string
 m_font	GUI/FPSMonitor.hpp	/^        sf::Font m_font;$/;"	m	class:FPSMonitor	typeref:typename:sf::Font
 m_fps	GUI/FPSMonitor.hpp	/^        float m_fps = 0;$/;"	m	class:FPSMonitor	typeref:typename:float
 m_fpsTimer	GUI/FPSMonitor.hpp	/^        sf::Clock m_fpsTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
 m_frameCount	GUI/FPSMonitor.hpp	/^        int m_frameCount = 0;$/;"	m	class:FPSMonitor	typeref:typename:int
 m_popStack	Game.hpp	/^    bool m_popStack = false;$/;"	m	class:Game	typeref:typename:bool
 m_quit	Game.hpp	/^    bool m_quit     = false;$/;"	m	class:Game	typeref:typename:bool
+m_resource	ResourceHandler/ResourceContainer.hpp	/^    std::map<std::string, Resource> m_resource;$/;"	m	class:ResourceContainer	typeref:typename:std::map<std::string,Resource>
 m_stack	State/DefaultState.hpp	/^  GUI::CenterStackWidget m_stack;$/;"	m	class:DefaultState	typeref:typename:GUI::CenterStackWidget
 m_state_stack	Game.hpp	/^    std::stack<BaseState*> m_state_stack;$/;"	m	class:Game	typeref:typename:std::stack<BaseState * >
 m_text	GUI/FPSMonitor.hpp	/^        sf::Text m_text;$/;"	m	class:FPSMonitor	typeref:typename:sf::Text
 m_widget_type	GUI/Widget.hpp	/^  std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
 m_window	Game.hpp	/^    sf::RenderWindow* m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
-p_game	State/BaseState.hpp	/^  Game* p_game;$/;"	m	class:BaseState	typeref:typename:Game *
+music	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Music>       music;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Music>
+p_game	State/BaseState.hpp	/^    Game* p_game;$/;"	m	class:BaseState	typeref:typename:Game *
 p_widget_vector	GUI/CenterStackWidget.hpp	/^  std::vector<Button*> p_widget_vector;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:std::vector<Button * >
 p_window	GUI/CenterStackWidget.hpp	/^  sf::RenderWindow*    p_window;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:sf::RenderWindow *
 popStack	Game.cpp	/^void Game::popStack()$/;"	f	class:Game	typeref:typename:void
 pushStack	Game.cpp	/^void Game::pushStack()$/;"	f	class:Game	typeref:typename:void
+remove	ResourceHandler/ResourceContainer.hpp	/^    void remove (const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 render	GUI/Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
 render	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 renderState	State/DefaultState.cpp	/^void DefaultState::renderState(sf::RenderTarget* renderer)$/;"	f	class:DefaultState	typeref:typename:void
@@ -78,13 +95,16 @@ setPopStack	Game.cpp	/^void Game::setPopStack()$/;"	f	class:Game	typeref:typenam
 setPosition	GUI/Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$/;"	f	class:GUI::Button	typeref:typename:void
 setSize	GUI/Button.cpp	/^  void Button::setSize(sf::Vector2f size)$/;"	f	class:GUI::Button	typeref:typename:void
 setTitle	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::setTitle(const std::string& title)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+soundBuffer	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::SoundBuffer> soundBuffer;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::SoundBuffer>
+texture	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Texture>     texture;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Texture>
 uint	GUI/CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
 update	GUI/Button.cpp	/^  void Button::update()$/;"	f	class:GUI::Button	typeref:typename:void
 update	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 update	GUI/FPSMonitor.cpp	/^void FPSMonitor::update()$/;"	f	class:FPSMonitor	typeref:typename:void
-updateState	State/BaseState.hpp	/^  virtual void updateState()                            {}$/;"	f	class:BaseState	typeref:typename:void
+updateState	State/BaseState.hpp	/^    virtual void updateState()                            {}$/;"	f	class:BaseState	typeref:typename:void
 updateState	State/DefaultState.cpp	/^void DefaultState::updateState()$/;"	f	class:DefaultState	typeref:typename:void
 ~Button	GUI/Button.cpp	/^  Button::~Button()$/;"	f	class:GUI::Button
 ~CenterStackWidget	GUI/CenterStackWidget.cpp	/^CenterStackWidget::~CenterStackWidget()$/;"	f	class:GUI::CenterStackWidget
 ~DefaultState	State/DefaultState.cpp	/^DefaultState::~DefaultState()$/;"	f	class:DefaultState
 ~Game	Game.cpp	/^Game::~Game()$/;"	f	class:Game
+~ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^    ~ResourceContainer()$/;"	f	class:ResourceContainer

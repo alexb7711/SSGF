@@ -18,20 +18,20 @@ class Game;
 //
 class BaseState 
 {
-public: 
-  BaseState(Game* game):
-    p_game(game)
-  {}
+  public: 
+    BaseState(Game* game):
+      p_game(game)
+    {}
 
-  virtual void updateState()                            {}
-  virtual void renderState(sf::RenderTarget* renderer ) = 0;
-  virtual void handleInput()                            = 0;
-  virtual void handleEvents(sf::Event e)                {}
+    virtual void updateState()                            {}
+    virtual void renderState(sf::RenderTarget* renderer ) = 0;
+    virtual void handleInput()                            = 0;
+    virtual void handleEvents(sf::Event e)                {}
 
-  virtual ~BaseState() = default;
+    virtual ~BaseState() = default;
 
-protected:
-  Game* p_game;
+  protected:
+    Game* p_game;
 
 };
 

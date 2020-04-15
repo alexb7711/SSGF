@@ -12,6 +12,7 @@
 
 // Custom Header Files
 #include "Widget.hpp"
+#include "../ResourceHandler/ResourceHandler.hpp"
 
 namespace GUI
 {
