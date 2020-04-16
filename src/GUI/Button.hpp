@@ -26,7 +26,7 @@ public:
   Button();
   void         render(sf::RenderTarget* renderer)  override;
   void         handleEvents(sf::Event e)           override;
-  void         update();
+  void         update(sf::RenderWindow* window);
 
   std::string  getType()                           override;
   sf::Vector2f getPosition()                       override;
@@ -40,7 +40,7 @@ public:
 
 private:
   // Private Methods
-  bool isHovering();
+  bool isHovering(sf::RenderWindow* window);
   void isClicked();
   void execute();
 

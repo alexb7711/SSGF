@@ -29,17 +29,18 @@ class Game
     Game();
 
     void              run();
-    void              pushStack();
+    void              pushState(BaseState* state);
     void              setPopStack();
+    void              setQuitGame();
     sf::RenderWindow* getWindow();
 
-    void exitGame();
     ~Game();
 
   private:
     // Private Methods
     void handleEvent();
-    void popStack();
+    void popState();
+    void quitGame();
 
     // Private Member Varibales
     sf::RenderWindow* m_window;
@@ -47,7 +48,7 @@ class Game
     std::stack<BaseState*> m_state_stack;
 
     bool m_quit     = false;
-    bool m_popStack = false;
+    bool m_popState = false;
 };
 
 #endif

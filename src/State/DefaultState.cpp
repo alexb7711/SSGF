@@ -56,7 +56,7 @@ void DefaultState::handleInput()
   }
   else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
   {
-      // quit...
+    p_game->setPopStack();
   }
   return;
 }

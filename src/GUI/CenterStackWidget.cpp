@@ -35,8 +35,9 @@ void CenterStackWidget::update()
   this->calculatePositions();
 
   for (uint item = 0; item < p_widget_vector.size(); ++item)
+      p_widget_vector[item]->update(p_window);
 
-      p_widget_vector[item]->update();
+  return;
 }
 
 //===============================================================================

@@ -39,11 +39,9 @@ void Game::run()
       m_state_stack.top()->updateState();
       lag -= sf::milliseconds(milliseconds_per_update);
     }
-
+    
     this->handleEvent();
-
     m_state_stack.top()->renderState(m_window);
-
     m_window->display();
     
     // Determine the amount of time that has elapsed
@@ -51,6 +49,9 @@ void Game::run()
     lag         += elapsed_time;
 
     // printf("FPS = %d\n", 1000/elapsed_time.asMilliseconds());
+    
+    // If requested, pop the stack
+    this->popState();
 
   }
 
@@ -58,15 +59,18 @@ void Game::run()
 }
 
 //===============================================================================
-//
-void Game::pushStack()
-{}
+// Add a new item to the top of the stack.
+void Game::pushState(BaseState* state)
+{ 
+  m_state_stack.push(state);
+  return;
+}
 
 //===============================================================================
-//
+// Indicate that the stack should be popped.
 void Game::setPopStack()
 {
-  m_popStack = true;
+  m_popState = true;
   return;
 }
 
@@ -79,8 +83,11 @@ sf::RenderWindow* Game::getWindow()
 
 //===============================================================================
 //
-void Game::exitGame()
-{}
+void Game::setQuitGame()
+{
+  m_popState = m_quit = true;
+  return;
+}
 
 //===============================================================================
 //
@@ -108,5 +115,29 @@ void Game::handleEvent()
 
 //===============================================================================
 //
-void Game::popStack()
-{}
+void Game::popState()
+{
+  if (m_popState)
+  {
+    if (m_state_stack.size() == 0 || m_quit)
+    {
+      this->quitGame();
+    }
+    else
+    {
+      m_popState = true;
+      m_state_stack.pop();
+    }
+  }
+
+  return;
+}
+
+//===============================================================================
+//
+void Game::quitGame()
+{
+  for (uint i = 0; i < m_state_stack.size(); ++i)
+    this->popState();
+  return;
+}

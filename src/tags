@@ -44,7 +44,6 @@ calculatePositions	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::calculate
 draw	GUI/FPSMonitor.cpp	/^void FPSMonitor::draw(sf::RenderTarget& renderer)$/;"	f	class:FPSMonitor	typeref:typename:void
 execute	GUI/Button.cpp	/^  void Button::execute()$/;"	f	class:GUI::Button	typeref:typename:void
 exists	ResourceHandler/ResourceContainer.hpp	/^    bool exists (std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:bool
-exitGame	Game.cpp	/^void Game::exitGame()$/;"	f	class:Game	typeref:typename:void
 font	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Font>        font;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Font>
 get	ResourceHandler/ResourceContainer.hpp	/^    const Resource* get(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:const Resource *
 getFullName	ResourceHandler/ResourceContainer.hpp	/^    void getFullName(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
@@ -60,7 +59,7 @@ handleEvents	State/BaseState.hpp	/^    virtual void handleEvents(sf::Event e)   
 handleEvents	State/DefaultState.cpp	/^void DefaultState::handleEvents(sf::Event e)$/;"	f	class:DefaultState	typeref:typename:void
 handleInput	State/DefaultState.cpp	/^void DefaultState::handleInput()$/;"	f	class:DefaultState	typeref:typename:void
 isClicked	GUI/Button.cpp	/^  void Button::isClicked()$/;"	f	class:GUI::Button	typeref:typename:void
-isHovering	GUI/Button.cpp	/^  bool Button::isHovering()$/;"	f	class:GUI::Button	typeref:typename:bool
+isHovering	GUI/Button.cpp	/^  bool Button::isHovering(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:bool
 m_button	GUI/Button.hpp	/^  sf::RectangleShape m_button;$/;"	m	class:GUI::Button	typeref:typename:sf::RectangleShape
 m_button_spacing	GUI/CenterStackWidget.hpp	/^  float                m_button_spacing;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:float
 m_circle	State/DefaultState.hpp	/^  sf::CircleShape m_circle;$/;"	m	class:DefaultState	typeref:typename:sf::CircleShape
@@ -72,7 +71,7 @@ m_font	GUI/FPSMonitor.hpp	/^        sf::Font m_font;$/;"	m	class:FPSMonitor	type
 m_fps	GUI/FPSMonitor.hpp	/^        float m_fps = 0;$/;"	m	class:FPSMonitor	typeref:typename:float
 m_fpsTimer	GUI/FPSMonitor.hpp	/^        sf::Clock m_fpsTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
 m_frameCount	GUI/FPSMonitor.hpp	/^        int m_frameCount = 0;$/;"	m	class:FPSMonitor	typeref:typename:int
-m_popStack	Game.hpp	/^    bool m_popStack = false;$/;"	m	class:Game	typeref:typename:bool
+m_popState	Game.hpp	/^    bool m_popState = false;$/;"	m	class:Game	typeref:typename:bool
 m_quit	Game.hpp	/^    bool m_quit     = false;$/;"	m	class:Game	typeref:typename:bool
 m_resource	ResourceHandler/ResourceContainer.hpp	/^    std::map<std::string, Resource> m_resource;$/;"	m	class:ResourceContainer	typeref:typename:std::map<std::string,Resource>
 m_stack	State/DefaultState.hpp	/^  GUI::CenterStackWidget m_stack;$/;"	m	class:DefaultState	typeref:typename:GUI::CenterStackWidget
@@ -84,8 +83,9 @@ music	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Music>    
 p_game	State/BaseState.hpp	/^    Game* p_game;$/;"	m	class:BaseState	typeref:typename:Game *
 p_widget_vector	GUI/CenterStackWidget.hpp	/^  std::vector<Button*> p_widget_vector;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:std::vector<Button * >
 p_window	GUI/CenterStackWidget.hpp	/^  sf::RenderWindow*    p_window;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:sf::RenderWindow *
-popStack	Game.cpp	/^void Game::popStack()$/;"	f	class:Game	typeref:typename:void
-pushStack	Game.cpp	/^void Game::pushStack()$/;"	f	class:Game	typeref:typename:void
+popState	Game.cpp	/^void Game::popState()$/;"	f	class:Game	typeref:typename:void
+pushState	Game.cpp	/^void Game::pushState(BaseState* state)$/;"	f	class:Game	typeref:typename:void
+quitGame	Game.cpp	/^void Game::quitGame()$/;"	f	class:Game	typeref:typename:void
 remove	ResourceHandler/ResourceContainer.hpp	/^    void remove (const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 render	GUI/Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
 render	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
@@ -93,12 +93,13 @@ renderState	State/DefaultState.cpp	/^void DefaultState::renderState(sf::RenderTa
 run	Game.cpp	/^void Game::run()$/;"	f	class:Game	typeref:typename:void
 setPopStack	Game.cpp	/^void Game::setPopStack()$/;"	f	class:Game	typeref:typename:void
 setPosition	GUI/Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$/;"	f	class:GUI::Button	typeref:typename:void
+setQuitGame	Game.cpp	/^void Game::setQuitGame()$/;"	f	class:Game	typeref:typename:void
 setSize	GUI/Button.cpp	/^  void Button::setSize(sf::Vector2f size)$/;"	f	class:GUI::Button	typeref:typename:void
 setTitle	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::setTitle(const std::string& title)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 soundBuffer	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::SoundBuffer> soundBuffer;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::SoundBuffer>
 texture	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Texture>     texture;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Texture>
 uint	GUI/CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
-update	GUI/Button.cpp	/^  void Button::update()$/;"	f	class:GUI::Button	typeref:typename:void
+update	GUI/Button.cpp	/^  void Button::update(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:void
 update	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 update	GUI/FPSMonitor.cpp	/^void FPSMonitor::update()$/;"	f	class:FPSMonitor	typeref:typename:void
 updateState	State/BaseState.hpp	/^    virtual void updateState()                            {}$/;"	f	class:BaseState	typeref:typename:void
