@@ -4,6 +4,7 @@
 // Public //
 //--------//
 
+
 //===============================================================================
 //
 Game::Game():
@@ -12,6 +13,7 @@ Game::Game():
   m_state_stack.push(new DefaultState(this));
   m_window->setPosition({m_window->getPosition().x, 0});
   m_window->setFramerateLimit(60);
+
   return;
 }
 
@@ -25,6 +27,15 @@ void Game::run()
   int milliseconds_per_update  = 16; // millisends - About 62 FPS
 
   sf::Clock clock;
+
+  // Testing
+  sf::Font font;
+  if (!font.loadFromFile("font/FreeMono.otf"))
+    printf("ERROR: FILE WAS NOT LOADED :(\n");
+
+  m_text.setFont(font);
+  m_text.setCharacterSize(30);
+  m_text.setString("Hello, World!");
 
   while (m_window->isOpen() && !m_state_stack.empty())
   {
@@ -41,7 +52,9 @@ void Game::run()
     }
     
     this->handleEvent();
+    m_window->clear();
     m_state_stack.top()->renderState(m_window);
+    m_window->draw(m_text);
     m_window->display();
     
     // Determine the amount of time that has elapsed

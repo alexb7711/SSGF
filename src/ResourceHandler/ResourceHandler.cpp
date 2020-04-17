@@ -5,11 +5,12 @@
 //========//
 
 //===============================================================================
-//
+// Can be implemented in a better way -> See Game Engine Design Notes
 ResourceHandler* ResourceHandler::getPtr()
 {
   static ResourceHandler handler; 
   return &handler;
+
 }
 
 //=========//
@@ -18,5 +19,6 @@ ResourceHandler* ResourceHandler::getPtr()
 
 //===============================================================================
 //
-ResourceHandler::ResourceHandler()
+ResourceHandler::ResourceHandler():
+  font("font", "otf")
 {}

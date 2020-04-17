@@ -24,8 +24,9 @@ GUI	GUI/Widget.hpp	/^namespace GUI$/;"	n
 Game	Game.cpp	/^Game::Game():$/;"	f	class:Game
 Game	Game.hpp	/^class Game $/;"	c
 ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^    ResourceContainer()$/;"	f	class:ResourceContainer
+ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^    ResourceContainer(const std::string folder, const std::string extension):$/;"	f	class:ResourceContainer
 ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^class ResourceContainer$/;"	c
-ResourceHandler	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler::ResourceHandler()$/;"	f	class:ResourceHandler
+ResourceHandler	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler::ResourceHandler():$/;"	f	class:ResourceHandler
 ResourceHandler	ResourceHandler/ResourceHandler.hpp	/^class ResourceHandler$/;"	c
 Widget	GUI/Widget.hpp	/^  Widget(std::string type):$/;"	f	class:GUI::Widget
 Widget	GUI/Widget.hpp	/^class Widget $/;"	c	namespace:GUI
@@ -46,7 +47,7 @@ execute	GUI/Button.cpp	/^  void Button::execute()$/;"	f	class:GUI::Button	typere
 exists	ResourceHandler/ResourceContainer.hpp	/^    bool exists (std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:bool
 font	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Font>        font;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Font>
 get	ResourceHandler/ResourceContainer.hpp	/^    const Resource* get(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:const Resource *
-getFullName	ResourceHandler/ResourceContainer.hpp	/^    void getFullName(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
+getFullName	ResourceHandler/ResourceContainer.hpp	/^    std::string getFullName(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:std::string
 getPosition	GUI/Button.cpp	/^  sf::Vector2f Button::getPosition()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
 getPtr	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler* ResourceHandler::getPtr()$/;"	f	class:ResourceHandler	typeref:typename:ResourceHandler *
 getSize	GUI/Button.cpp	/^  sf::Vector2f Button::getSize()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
@@ -77,6 +78,7 @@ m_resource	ResourceHandler/ResourceContainer.hpp	/^    std::map<std::string, Res
 m_stack	State/DefaultState.hpp	/^  GUI::CenterStackWidget m_stack;$/;"	m	class:DefaultState	typeref:typename:GUI::CenterStackWidget
 m_state_stack	Game.hpp	/^    std::stack<BaseState*> m_state_stack;$/;"	m	class:Game	typeref:typename:std::stack<BaseState * >
 m_text	GUI/FPSMonitor.hpp	/^        sf::Text m_text;$/;"	m	class:FPSMonitor	typeref:typename:sf::Text
+m_text	Game.hpp	/^    sf::Text m_text;$/;"	m	class:Game	typeref:typename:sf::Text
 m_widget_type	GUI/Widget.hpp	/^  std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
 m_window	Game.hpp	/^    sf::RenderWindow* m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
 music	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Music>       music;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Music>

@@ -21,38 +21,83 @@ class ResourceContainer
 {
   public:
     // Public Methods
+
+    //===========================================================================
+    // For the use of storing text for a state
     ResourceContainer()
     {}
+    
+    //===========================================================================
+    // For the use of loading and storing resources for a state
+    ResourceContainer(const std::string folder, const std::string extension):
+      m_folder(folder+"/"),
+      m_extension("."+extension)
+    {}
 
+    //===========================================================================
+    //
     const Resource* get(const std::string& name)
     {
-      return this;
+      if (this->exists(name))
+        return m_resource.find(name);
     }
 
+    //===========================================================================
+    //
     bool exists (std::string& name)
     {
-      return true;
+      Resource node_to_delete = m_resource.find(name);
+
+      return (!node_to_delete == m_resource.end());
     }
 
+    //===========================================================================
+    //
     void add(const std::string& name)
-    {}
+    {
+      Resource resource;
 
+      if ( !resource.loadFromFile( getFullName(name) ) )
+      {
+        // TODO: Load default resource
+      }
+      else
+      {
+        m_resource.insert(name, resource);
+      }
+
+      return;
+    }
+
+    //===========================================================================
+    //
     void remove (const std::string& name)
-    {}
+    {
+      if (this->exists(name))
+        m_resource.erase(name);
 
+      return;
+    }
+
+    //===========================================================================
+    //
     ~ResourceContainer()
     {}
 
   private:
     // Private Methods
-    void getFullName(const std::string& name)
-    {}
+    
+    //===========================================================================
+    //
+    std::string getFullName(const std::string& name)
+    {
+      return m_folder + name + m_extension;
+    }
 
     // Private Member Variables
     std::map<std::string, Resource> m_resource;
     const std::string m_folder;
     const std::string m_extension;
-
 };
 
 #endif

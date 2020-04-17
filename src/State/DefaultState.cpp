@@ -26,11 +26,8 @@ void DefaultState::updateState()
 //
 void DefaultState::renderState(sf::RenderTarget* renderer)
 {
-  renderer->clear();
   renderer->draw(m_circle);
-
   m_stack.render(renderer);
-  // m_button.render(renderer);
   return;
 }
 

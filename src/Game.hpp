@@ -49,6 +49,9 @@ class Game
 
     bool m_quit     = false;
     bool m_popState = false;
+
+    // Testing
+    sf::Text m_text;
 };
 
 #endif

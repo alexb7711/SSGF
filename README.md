@@ -20,3 +20,16 @@ Resources that I utilize will be referenced below.
 [SFML Webstie](https://www.sfml-dev.org/learn.php)
 [Tutorial: Basic Game Engine](https://github.com/SFML/SFML/wiki/Tutorial%3A-Basic-Game-Engine)
 [Vigilante-Game-Framework](https://github.com/gamepopper/Vigilante-Game-Framework)
+
+
+# TODO
+- [X] Game Main Loop
+- [X] Game State System
+- [X] GUI generator
+	- [X] Widget
+	- [X] Widget Stacker
+	- [X] Button
+- [X] State manager (push/pop states on request)
+- [X] FPS Tracker
+- [ ] Asset Manager -> In Progress
+- [ ] Animation Tool
