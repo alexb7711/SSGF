@@ -28,15 +28,6 @@ void Game::run()
 
   sf::Clock clock;
 
-  // Testing
-  sf::Font font;
-  if (!font.loadFromFile("font/FreeMono.otf"))
-    printf("ERROR: FILE WAS NOT LOADED :(\n");
-
-  m_text.setFont(font);
-  m_text.setCharacterSize(30);
-  m_text.setString("Hello, World!");
-
   while (m_window->isOpen() && !m_state_stack.empty())
   {
     // Reset the timer
@@ -54,7 +45,6 @@ void Game::run()
     this->handleEvent();
     m_window->clear();
     m_state_stack.top()->renderState(m_window);
-    m_window->draw(m_text);
     m_window->display();
     
     // Determine the amount of time that has elapsed

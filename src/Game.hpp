@@ -44,14 +44,10 @@ class Game
 
     // Private Member Varibales
     sf::RenderWindow* m_window;
-
     std::stack<BaseState*> m_state_stack;
-
+    
     bool m_quit     = false;
     bool m_popState = false;
-
-    // Testing
-    sf::Text m_text;
 };
 
 #endif

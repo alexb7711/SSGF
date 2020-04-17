@@ -36,19 +36,21 @@ class ResourceContainer
 
     //===========================================================================
     //
-    const Resource* get(const std::string& name)
+    const Resource& get(const std::string& name)
     {
-      if (this->exists(name))
-        return m_resource.find(name);
+      if (!this->exists(name))
+      {
+        this->add(name);
+      }
+
+        return m_resource[name];
     }
 
     //===========================================================================
     //
-    bool exists (std::string& name)
+    bool exists (const std::string& name)
     {
-      Resource node_to_delete = m_resource.find(name);
-
-      return (!node_to_delete == m_resource.end());
+      return m_resource.find(name) != m_resource.end();
     }
 
     //===========================================================================
@@ -63,7 +65,7 @@ class ResourceContainer
       }
       else
       {
-        m_resource.insert(name, resource);
+        m_resource[name] = resource;
       }
 
       return;

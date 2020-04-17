@@ -13,8 +13,7 @@
 // Custom Header Files
 #include "BaseState.hpp"
 #include "../GUI/CenterStackWidget.hpp"
-// #include "../GUI/Widget.hpp"
-// #include "../GUI/Button.hpp"
+#include "../ResourceHandler/ResourceHandler.hpp"
 
 class Widget;
 
@@ -22,22 +21,23 @@ class Widget;
 //
 class DefaultState : public BaseState
 {
-public: 
-  // Public Methods
-  DefaultState(Game* game);
-  void updateState()                           override;
-  void renderState(sf::RenderTarget* renderer) override;
-  void handleInput()                           override;
-  void handleEvents(sf::Event e)               override;
-  ~DefaultState();
+  public: 
+    // Public Methods
+    DefaultState(Game* game);
+    void updateState()                           override;
+    void renderState(sf::RenderTarget* renderer) override;
+    void handleInput()                           override;
+    void handleEvents(sf::Event e)               override;
+    ~DefaultState();
 
-private:
-  // Private Member Variables
-  sf::CircleShape m_circle;
-  sf::Vector2f    m_circle_pos;
-  
-  GUI::CenterStackWidget m_stack;
-  // GUI::Button     m_button;
+  private:
+    // Private Member Variables
+    sf::CircleShape        m_circle;
+    sf::Vector2f           m_circle_pos;
+    GUI::CenterStackWidget m_stack;
+
+    // Testing Text
+    sf::Text               m_text;
 };
 
 #endif
