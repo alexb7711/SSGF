@@ -7,6 +7,7 @@ SRC    = main.cpp \
 	 ../src/Game.cpp \
 	 ../src/GUI/Button.cpp \
 	 ../src/GUI/CenterStackWidget.cpp \
+	 ../src/GUI/FPSMonitor.cpp \
 	 ../src/State/DefaultState.cpp \
 	 ../src/ResourceHandler/ResourceHandler.cpp \
 
