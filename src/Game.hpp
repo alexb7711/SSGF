@@ -1,9 +1,21 @@
-// File: Game.hpp
-// Author: Alexander Brown
-// Version: 0.1
-// Changelog: 
-// Description: Handles the main game loop, states, updating, user input,
-//              rendering, and FPS.
+/*
+ * =====================================================================================
+ *
+ *       Filename:  Game.hpp
+ *
+ *    Description: Handles the main game loop, states, updating, user input, 
+ *                 rendering, and FPS.
+ *
+ *        Version:  1.0
+ *        Created:  04/20/2020 03:30:03 PM
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Alexander Brown (), alex.brown7711@gmail.com
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
 
 #ifndef _GAME_HPP_ 
 #define _GAME_HPP_ 

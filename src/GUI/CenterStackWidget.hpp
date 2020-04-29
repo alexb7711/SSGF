@@ -8,6 +8,7 @@
 #ifndef _CENTER_STACK_WIDGETS_H_ 
 #define _CENTER_STACK_WIDGETS_H_ 
 
+// Typedefines
 typedef unsigned int uint; 
 
 // C/C++ Standard Library

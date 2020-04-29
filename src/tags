@@ -6,6 +6,8 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Animate	Utilities/Animate.cpp	/^Animate::Animate(uint frame_width, uint frame_height)$/;"	f	class:Animate
+Animate	Utilities/Animate.hpp	/^class Animate$/;"	c
 BaseState	State/BaseState.hpp	/^    BaseState(Game* game):$/;"	f	class:BaseState
 BaseState	State/BaseState.hpp	/^class BaseState $/;"	c
 Button	GUI/Button.cpp	/^  Button::Button():$/;"	f	class:GUI::Button
@@ -28,8 +30,10 @@ ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^    ResourceContainer(
 ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^class ResourceContainer$/;"	c
 ResourceHandler	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler::ResourceHandler():$/;"	f	class:ResourceHandler
 ResourceHandler	ResourceHandler/ResourceHandler.hpp	/^class ResourceHandler$/;"	c
+SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
 Widget	GUI/Widget.hpp	/^  Widget(std::string type):$/;"	f	class:GUI::Widget
 Widget	GUI/Widget.hpp	/^class Widget $/;"	c	namespace:GUI
+_ANIMATE_H_	Utilities/Animate.hpp	/^#define _ANIMATE_H_$/;"	d
 _BASE_STATE_H_	State/BaseState.hpp	/^#define _BASE_STATE_H_ /;"	d
 _BUTTON_H_	GUI/Button.hpp	/^#define _BUTTON_H_ /;"	d
 _CENTER_STACK_WIDGETS_H_	GUI/CenterStackWidget.hpp	/^#define _CENTER_STACK_WIDGETS_H_ /;"	d
@@ -42,7 +46,6 @@ _WIDGET_H_	GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
 add	ResourceHandler/ResourceContainer.hpp	/^    void add(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 addWidget	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::addWidget()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 calculatePositions	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::calculatePositions()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
-draw	GUI/FPSMonitor.cpp	/^void FPSMonitor::draw(sf::RenderTarget& renderer)$/;"	f	class:FPSMonitor	typeref:typename:void
 execute	GUI/Button.cpp	/^  void Button::execute()$/;"	f	class:GUI::Button	typeref:typename:void
 exists	ResourceHandler/ResourceContainer.hpp	/^    bool exists (const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:bool
 font	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Font>        font;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Font>
@@ -61,24 +64,24 @@ handleEvents	State/DefaultState.cpp	/^void DefaultState::handleEvents(sf::Event 
 handleInput	State/DefaultState.cpp	/^void DefaultState::handleInput()$/;"	f	class:DefaultState	typeref:typename:void
 isClicked	GUI/Button.cpp	/^  void Button::isClicked()$/;"	f	class:GUI::Button	typeref:typename:void
 isHovering	GUI/Button.cpp	/^  bool Button::isHovering(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:bool
+m_FPS	State/DefaultState.hpp	/^    FPSMonitor m_FPS;$/;"	m	class:DefaultState	typeref:typename:FPSMonitor
 m_button	GUI/Button.hpp	/^  sf::RectangleShape m_button;$/;"	m	class:GUI::Button	typeref:typename:sf::RectangleShape
 m_button_spacing	GUI/CenterStackWidget.hpp	/^  float                m_button_spacing;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:float
 m_circle	State/DefaultState.hpp	/^    sf::CircleShape        m_circle;$/;"	m	class:DefaultState	typeref:typename:sf::CircleShape
 m_circle_pos	State/DefaultState.hpp	/^    sf::Vector2f           m_circle_pos;$/;"	m	class:DefaultState	typeref:typename:sf::Vector2f
-m_delayTimer	GUI/FPSMonitor.hpp	/^        sf::Clock m_delayTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
+m_delayTimer	GUI/FPSMonitor.hpp	/^    sf::Clock m_delayTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
 m_extension	ResourceHandler/ResourceContainer.hpp	/^    const std::string m_extension;$/;"	m	class:ResourceContainer	typeref:typename:const std::string
 m_folder	ResourceHandler/ResourceContainer.hpp	/^    const std::string m_folder;$/;"	m	class:ResourceContainer	typeref:typename:const std::string
-m_font	GUI/FPSMonitor.hpp	/^        sf::Font m_font;$/;"	m	class:FPSMonitor	typeref:typename:sf::Font
-m_fps	GUI/FPSMonitor.hpp	/^        float m_fps = 0;$/;"	m	class:FPSMonitor	typeref:typename:float
-m_fpsTimer	GUI/FPSMonitor.hpp	/^        sf::Clock m_fpsTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
-m_frameCount	GUI/FPSMonitor.hpp	/^        int m_frameCount = 0;$/;"	m	class:FPSMonitor	typeref:typename:int
+m_font	GUI/FPSMonitor.hpp	/^    sf::Font  m_font;$/;"	m	class:FPSMonitor	typeref:typename:sf::Font
+m_fps	GUI/FPSMonitor.hpp	/^    float m_fps      = 0;$/;"	m	class:FPSMonitor	typeref:typename:float
+m_fpsTimer	GUI/FPSMonitor.hpp	/^    sf::Clock m_fpsTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
+m_frameCount	GUI/FPSMonitor.hpp	/^    int m_frameCount = 0;$/;"	m	class:FPSMonitor	typeref:typename:int
 m_popState	Game.hpp	/^    bool m_popState = false;$/;"	m	class:Game	typeref:typename:bool
 m_quit	Game.hpp	/^    bool m_quit     = false;$/;"	m	class:Game	typeref:typename:bool
 m_resource	ResourceHandler/ResourceContainer.hpp	/^    std::map<std::string, Resource> m_resource;$/;"	m	class:ResourceContainer	typeref:typename:std::map<std::string,Resource>
 m_stack	State/DefaultState.hpp	/^    GUI::CenterStackWidget m_stack;$/;"	m	class:DefaultState	typeref:typename:GUI::CenterStackWidget
 m_state_stack	Game.hpp	/^    std::stack<BaseState*> m_state_stack;$/;"	m	class:Game	typeref:typename:std::stack<BaseState * >
-m_text	GUI/FPSMonitor.hpp	/^        sf::Text m_text;$/;"	m	class:FPSMonitor	typeref:typename:sf::Text
-m_text	State/DefaultState.hpp	/^    sf::Text               m_text;$/;"	m	class:DefaultState	typeref:typename:sf::Text
+m_text	GUI/FPSMonitor.hpp	/^    sf::Text  m_text;$/;"	m	class:FPSMonitor	typeref:typename:sf::Text
 m_widget_type	GUI/Widget.hpp	/^  std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
 m_window	Game.hpp	/^    sf::RenderWindow* m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
 music	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Music>       music;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Music>
@@ -91,8 +94,21 @@ quitGame	Game.cpp	/^void Game::quitGame()$/;"	f	class:Game	typeref:typename:void
 remove	ResourceHandler/ResourceContainer.hpp	/^    void remove (const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 render	GUI/Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
 render	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+render	GUI/FPSMonitor.cpp	/^void FPSMonitor::render(sf::RenderTarget* renderer)$/;"	f	class:FPSMonitor	typeref:typename:void
 renderState	State/DefaultState.cpp	/^void DefaultState::renderState(sf::RenderTarget* renderer)$/;"	f	class:DefaultState	typeref:typename:void
 run	Game.cpp	/^void Game::run()$/;"	f	class:Game	typeref:typename:void
+s:l	Session.vim	/^let s:l = 1 - ((0 * winheight(0) + 31) \/ 62)$/;"	v
+s:l	Session.vim	/^let s:l = 13 - ((12 * winheight(0) + 31) \/ 62)$/;"	v
+s:l	Session.vim	/^let s:l = 15 - ((14 * winheight(0) + 31) \/ 62)$/;"	v
+s:l	Session.vim	/^let s:l = 23 - ((22 * winheight(0) + 31) \/ 62)$/;"	v
+s:l	Session.vim	/^let s:l = 44 - ((43 * winheight(0) + 31) \/ 63)$/;"	v
+s:l	Session.vim	/^let s:l = 47 - ((46 * winheight(0) + 31) \/ 62)$/;"	v
+s:l	Session.vim	/^let s:l = 57 - ((41 * winheight(0) + 31) \/ 63)$/;"	v
+s:l	Session.vim	/^let s:l = 69 - ((40 * winheight(0) + 31) \/ 62)$/;"	v
+s:l	Session.vim	/^let s:l = 75 - ((38 * winheight(0) + 31) \/ 62)$/;"	v
+s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
+s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
+s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
 setPopStack	Game.cpp	/^void Game::setPopStack()$/;"	f	class:Game	typeref:typename:void
 setPosition	GUI/Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$/;"	f	class:GUI::Button	typeref:typename:void
 setQuitGame	Game.cpp	/^void Game::setQuitGame()$/;"	f	class:Game	typeref:typename:void
@@ -101,13 +117,16 @@ setTitle	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::setTitle(const std:
 soundBuffer	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::SoundBuffer> soundBuffer;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::SoundBuffer>
 texture	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Texture>     texture;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Texture>
 uint	GUI/CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
+uint	Utilities/Animate.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
 update	GUI/Button.cpp	/^  void Button::update(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:void
 update	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 update	GUI/FPSMonitor.cpp	/^void FPSMonitor::update()$/;"	f	class:FPSMonitor	typeref:typename:void
 updateState	State/BaseState.hpp	/^    virtual void updateState()                            {}$/;"	f	class:BaseState	typeref:typename:void
 updateState	State/DefaultState.cpp	/^void DefaultState::updateState()$/;"	f	class:DefaultState	typeref:typename:void
+~Animate	Utilities/Animate.cpp	/^Animate::~Animate()$/;"	f	class:Animate
 ~Button	GUI/Button.cpp	/^  Button::~Button()$/;"	f	class:GUI::Button
 ~CenterStackWidget	GUI/CenterStackWidget.cpp	/^CenterStackWidget::~CenterStackWidget()$/;"	f	class:GUI::CenterStackWidget
 ~DefaultState	State/DefaultState.cpp	/^DefaultState::~DefaultState()$/;"	f	class:DefaultState
+~FPSMonitor	GUI/FPSMonitor.cpp	/^FPSMonitor::~FPSMonitor()$/;"	f	class:FPSMonitor
 ~Game	Game.cpp	/^Game::~Game()$/;"	f	class:Game
 ~ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^    ~ResourceContainer()$/;"	f	class:ResourceContainer

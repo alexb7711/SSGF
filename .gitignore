@@ -3,3 +3,6 @@
 
 # Ignore Generated PDF
 *.pdf
+
+# Vim Session Files
+.vs

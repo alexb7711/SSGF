@@ -55,7 +55,6 @@ void Game::run()
     
     // If requested, pop the stack
     this->popState();
-
   }
 
   return;
@@ -95,7 +94,10 @@ void Game::setQuitGame()
 //===============================================================================
 //
 Game::~Game()
-{}
+{
+  delete m_window;
+  return;
+}
 
 
 //---------//

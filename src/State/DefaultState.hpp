@@ -1,8 +1,20 @@
-// File: DefaultState.hpp
-// Author: Alexander Brown
-// Version: 0.1
-// Changelog: 
-// Description: The starting state that the game will be placed into.
+/*
+ * =====================================================================================
+ *
+ *       Filename:  DefaultState.hpp
+ *
+ *    Description: The starting state that the game will be placed into.
+ *
+ *        Version:  1.0
+ *        Created:  04/21/2020 12:14:52 PM
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Alexander Brown (), alex.brown7711@gmail.com
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
 
 #ifndef _DEFAULT_STATE_H_ 
 #define _DEFAULT_STATE_H_ 
@@ -13,12 +25,17 @@
 // Custom Header Files
 #include "BaseState.hpp"
 #include "../GUI/CenterStackWidget.hpp"
+#include "../GUI/FPSMonitor.hpp"
 #include "../ResourceHandler/ResourceHandler.hpp"
 
 class Widget;
 
-//===============================================================================
-//
+/*
+ * =====================================================================================
+ *        Class:  DefaultSate
+ *  Description: The starting state that the game will be placed into.
+ * =====================================================================================
+ */
 class DefaultState : public BaseState
 {
   public: 
@@ -37,7 +54,10 @@ class DefaultState : public BaseState
     GUI::CenterStackWidget m_stack;
 
     // Testing Text
-    sf::Text               m_text;
+//    sf::Text               m_text;
+
+    // Testing FPS Monitor
+    FPSMonitor m_FPS;
 };
 
 #endif

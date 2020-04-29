@@ -10,6 +10,7 @@ SRC    = main.cpp \
 	 ../src/GUI/FPSMonitor.cpp \
 	 ../src/State/DefaultState.cpp \
 	 ../src/ResourceHandler/ResourceHandler.cpp \
+	 ../src/Utilities/Animate.cpp \
 
 OBJ    = $(SRC:.c=.o)
 

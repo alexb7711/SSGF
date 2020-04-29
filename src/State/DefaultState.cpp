@@ -1,8 +1,33 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  DefaultState.cpp
+ *
+ *    Description: The starting state that the game will be placed into.  
+ *
+ *        Version:  1.0
+ *        Created:  04/21/2020 12:15:00 PM
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Alexander Brown (), alex.brown7711@gmail.com
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+
+#include <stdlib.h>
+
 #include "DefaultState.hpp"
 #include "../Game.hpp"
 
-//===============================================================================
-//
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  DefaultState::
+ *  Description:  
+ * =====================================================================================
+ */
 DefaultState::DefaultState(Game* game):
   BaseState(game),
   m_circle(10.f),
@@ -11,35 +36,54 @@ DefaultState::DefaultState(Game* game):
   m_circle.setFillColor(sf::Color::Green);
   m_circle_pos = m_circle.getPosition();
   
-  // Testing Text
-  m_text.setFont(ResourceHandler::getPtr()->font.get("FreeMono"));
-  m_text.setCharacterSize(30);
-  m_text.setString("Hello, World!");
+// Testing Text
+//  m_text.setFont(ResourceHandler::getPtr()->font.get("FreeMono"));
+//  m_text.setCharacterSize(30);
+//  m_text.setString("Hello, World!");
 
   return;
 }
-  
-//===============================================================================
-//
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  DefaultState::updateState()
+ *  Description:  
+ * =====================================================================================
+ */
 void DefaultState::updateState()
 {
   m_circle.setPosition(m_circle_pos);
   m_stack.update();
+  m_FPS.update();
   return;
 }
 
-//===============================================================================
-//
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  DefaultState::renderState
+ *  Description: 
+ *
+ * =====================================================================================
+ */
 void DefaultState::renderState(sf::RenderTarget* renderer)
 {
   renderer->draw(m_circle);
-  renderer->draw(m_text);
+//  renderer->draw(m_text);
   m_stack.render(renderer);
+  m_FPS.render(renderer);
   return;
 }
 
-//===============================================================================
-//
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  DefaultState::handleInput
+ *  Description: 
+ *
+ * =====================================================================================
+ */
 void DefaultState::handleInput()
 {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
@@ -65,8 +109,14 @@ void DefaultState::handleInput()
   return;
 }
 
-//===============================================================================
-//
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  DefaultState::handleEvents
+ *  Description: 
+ *
+ * =====================================================================================
+ */
 void DefaultState::handleEvents(sf::Event e)
 {}
   

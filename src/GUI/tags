@@ -1,0 +1,59 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Button	Button.cpp	/^  Button::Button():$/;"	f	class:GUI::Button
+Button	Button.hpp	/^class Button : public Widget$/;"	c	namespace:GUI
+CenterStackWidget	CenterStackWidget.cpp	/^CenterStackWidget::CenterStackWidget(sf::RenderWindow* window):$/;"	f	class:GUI::CenterStackWidget
+CenterStackWidget	CenterStackWidget.hpp	/^class CenterStackWidget$/;"	c	namespace:GUI
+FPSMonitor	FPSMonitor.cpp	/^FPSMonitor::FPSMonitor()$/;"	f	class:FPSMonitor
+FPSMonitor	FPSMonitor.hpp	/^class FPSMonitor$/;"	c
+GUI	Button.cpp	/^namespace GUI$/;"	n	file:
+GUI	Button.hpp	/^namespace GUI$/;"	n
+GUI	CenterStackWidget.cpp	/^namespace GUI$/;"	n	file:
+GUI	CenterStackWidget.hpp	/^namespace GUI$/;"	n
+GUI	Widget.hpp	/^namespace GUI$/;"	n
+Widget	Widget.hpp	/^  Widget(std::string type):$/;"	f	class:GUI::Widget
+Widget	Widget.hpp	/^class Widget $/;"	c	namespace:GUI
+_BUTTON_H_	Button.hpp	/^#define _BUTTON_H_ /;"	d
+_CENTER_STACK_WIDGETS_H_	CenterStackWidget.hpp	/^#define _CENTER_STACK_WIDGETS_H_ /;"	d
+_FPS_COUNTER_H_	FPSMonitor.hpp	/^#define _FPS_COUNTER_H_$/;"	d
+_WIDGET_H_	Widget.hpp	/^#define _WIDGET_H_ /;"	d
+addWidget	CenterStackWidget.cpp	/^void CenterStackWidget::addWidget()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+calculatePositions	CenterStackWidget.cpp	/^void CenterStackWidget::calculatePositions()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+execute	Button.cpp	/^  void Button::execute()$/;"	f	class:GUI::Button	typeref:typename:void
+getPosition	Button.cpp	/^  sf::Vector2f Button::getPosition()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
+getSize	Button.cpp	/^  sf::Vector2f Button::getSize()$/;"	f	class:GUI::Button	typeref:typename:sf::Vector2f
+getType	Button.cpp	/^  std::string Button::getType()$/;"	f	class:GUI::Button	typeref:typename:std::string
+handleEvents	Button.cpp	/^  void Button::handleEvents(sf::Event e)$/;"	f	class:GUI::Button	typeref:typename:void
+handleEvents	CenterStackWidget.cpp	/^void CenterStackWidget::handleEvents()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+isClicked	Button.cpp	/^  void Button::isClicked()$/;"	f	class:GUI::Button	typeref:typename:void
+isHovering	Button.cpp	/^  bool Button::isHovering(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:bool
+m_button	Button.hpp	/^  sf::RectangleShape m_button;$/;"	m	class:GUI::Button	typeref:typename:sf::RectangleShape
+m_button_spacing	CenterStackWidget.hpp	/^  float                m_button_spacing;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:float
+m_delayTimer	FPSMonitor.hpp	/^    sf::Clock m_delayTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
+m_font	FPSMonitor.hpp	/^    sf::Font  m_font;$/;"	m	class:FPSMonitor	typeref:typename:sf::Font
+m_fps	FPSMonitor.hpp	/^    float m_fps      = 0;$/;"	m	class:FPSMonitor	typeref:typename:float
+m_fpsTimer	FPSMonitor.hpp	/^    sf::Clock m_fpsTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
+m_frameCount	FPSMonitor.hpp	/^    int m_frameCount = 0;$/;"	m	class:FPSMonitor	typeref:typename:int
+m_text	FPSMonitor.hpp	/^    sf::Text  m_text;$/;"	m	class:FPSMonitor	typeref:typename:sf::Text
+m_widget_type	Widget.hpp	/^  std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
+p_widget_vector	CenterStackWidget.hpp	/^  std::vector<Button*> p_widget_vector;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:std::vector<Button * >
+p_window	CenterStackWidget.hpp	/^  sf::RenderWindow*    p_window;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:sf::RenderWindow *
+render	Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
+render	CenterStackWidget.cpp	/^void CenterStackWidget::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+render	FPSMonitor.cpp	/^void FPSMonitor::render(sf::RenderTarget* renderer)$/;"	f	class:FPSMonitor	typeref:typename:void
+setPosition	Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$/;"	f	class:GUI::Button	typeref:typename:void
+setSize	Button.cpp	/^  void Button::setSize(sf::Vector2f size)$/;"	f	class:GUI::Button	typeref:typename:void
+setTitle	CenterStackWidget.cpp	/^void CenterStackWidget::setTitle(const std::string& title)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+uint	CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
+update	Button.cpp	/^  void Button::update(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:void
+update	CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
+update	FPSMonitor.cpp	/^void FPSMonitor::update()$/;"	f	class:FPSMonitor	typeref:typename:void
+~Button	Button.cpp	/^  Button::~Button()$/;"	f	class:GUI::Button
+~CenterStackWidget	CenterStackWidget.cpp	/^CenterStackWidget::~CenterStackWidget()$/;"	f	class:GUI::CenterStackWidget
+~FPSMonitor	FPSMonitor.cpp	/^FPSMonitor::~FPSMonitor()$/;"	f	class:FPSMonitor
