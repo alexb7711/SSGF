@@ -47,7 +47,7 @@ private:
 
   // Private Member Variables
   sf::RenderWindow*    p_window;
-  std::vector<Button*> p_widget_vector;
+  std::vector<Widget*> p_widget_vector;
   float                m_button_spacing;
 };
 

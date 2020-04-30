@@ -35,11 +35,6 @@ DefaultState::DefaultState(Game* game):
 {
   m_circle.setFillColor(sf::Color::Green);
   m_circle_pos = m_circle.getPosition();
-  
-// Testing Text
-//  m_text.setFont(ResourceHandler::getPtr()->font.get("FreeMono"));
-//  m_text.setCharacterSize(30);
-//  m_text.setString("Hello, World!");
 
   return;
 }

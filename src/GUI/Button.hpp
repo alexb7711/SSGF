@@ -1,8 +1,20 @@
-// File: Button.hpp
-// Author: Alexander Brown
-// Version: 0.1
-// Changelog: 
-// Description: A basic button class.
+/*
+ * =====================================================================================
+ *
+ *       Filename:  Button.hpp
+ *
+ *    Description:  A basic button class.
+ *
+ *        Version:  1.0
+ *        Created:  04/30/2020 01:40:07 PM
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Alexander Brown (), alex.brown7711@gmail.com
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
 
 #ifndef _BUTTON_H_
 #define _BUTTON_H_ 
@@ -11,42 +23,39 @@
 #include <string>
 
 // Custom Header Files
-#include "Widget.hpp"
+#include "ClickableWidget.hpp"
 #include "../ResourceHandler/ResourceHandler.hpp"
 
 namespace GUI
 {
 
-//===============================================================================
-//
-class Button : public Widget
-{
-public: 
-  // Public Methods
-  Button();
-  void         render(sf::RenderTarget* renderer)  override;
-  void         handleEvents(sf::Event e)           override;
-  void         update(sf::RenderWindow* window);
+  class Button : public ClickableWidget
+  {
+  public: 
+    // Public Methods
+    Button();
+    void         render(sf::RenderTarget* renderer)  override;
+    void         handleEvents(sf::Event e)           override;
+    void         update(sf::RenderWindow* window)    override;
 
-  std::string  getType()                           override;
-  sf::Vector2f getPosition()                       override;
-  void         setPosition(sf::Vector2f& position) override;
+    std::string  getType()                           override;
+    sf::Vector2f getPosition()                       override;
+    void         setPosition(sf::Vector2f& position) override;
 
-  void         setFunction(); 
-  sf::Vector2f getSize(); 
-  void         setSize(sf::Vector2f size);
+    bool isHovering(sf::RenderWindow* window)        override;
+    void isClicked()                                 override;
+    void execute()                                   override;
 
-  ~Button();
+    void         setFunction()                       override;
+    sf::Vector2f getSize()                           override;
+    void         setSize(sf::Vector2f size)          override;
 
-private:
-  // Private Methods
-  bool isHovering(sf::RenderWindow* window);
-  void isClicked();
-  void execute();
+    ~Button();
 
-  // Private Member Variables
-  sf::RectangleShape m_button;
-};
+  private:
+    // Private Member Variables
+    sf::RectangleShape m_button;
+  };
 
 }
 

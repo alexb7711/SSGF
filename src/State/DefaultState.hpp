@@ -53,9 +53,6 @@ class DefaultState : public BaseState
     sf::Vector2f           m_circle_pos;
     GUI::CenterStackWidget m_stack;
 
-    // Testing Text
-//    sf::Text               m_text;
-
     // Testing FPS Monitor
     FPSMonitor m_FPS;
 };
