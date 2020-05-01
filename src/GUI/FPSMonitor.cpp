@@ -35,7 +35,7 @@ FPSMonitor::FPSMonitor()
     m_text.setOutlineColor (sf::Color::Black);
     m_text.setFillColor({255,255,255});
     m_text.setOutlineThickness  (2);
-    m_text.setFont(ResourceHandler::getPtr()->font.get("FreeMono"));
+    m_text.setFont(ResourceHandler::Instance()->font.get("FreeMono"));
     m_text.setCharacterSize(15);
     return;
 }

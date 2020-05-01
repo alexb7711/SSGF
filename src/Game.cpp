@@ -8,7 +8,8 @@
 //===============================================================================
 //
 Game::Game():
-  m_window(new sf::RenderWindow(sf::VideoMode(1280, 720), "Game Title"))
+  m_window(new sf::RenderWindow(sf::VideoMode(1280, 720), "Game Title")),
+  m_clock(util::Clock::Instance())
 {
   m_state_stack.push(new DefaultState(this));
   m_window->setPosition({m_window->getPosition().x, 0});
@@ -26,12 +27,13 @@ void Game::run()
   sf::Time lag                 = sf::Time::Zero;
   int milliseconds_per_update  = 16; // millisends - About 62 FPS
 
-  sf::Clock clock;
+//  sf::Clock clock;
 
   while (m_window->isOpen() && !m_state_stack.empty())
   {
     // Reset the timer
-    clock.restart();
+    m_clock->restart();
+//    clock.restart();
     
     m_state_stack.top()->handleInput();
 
@@ -48,7 +50,8 @@ void Game::run()
     m_window->display();
     
     // Determine the amount of time that has elapsed
-    elapsed_time = clock.getElapsedTime();
+//    elapsed_time = clock.getElapsedTime();
+    elapsed_time = m_clock->getElapsedTime(); 
     lag         += elapsed_time;
 
     // printf("FPS = %d\n", 1000/elapsed_time.asMilliseconds());

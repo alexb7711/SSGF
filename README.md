@@ -26,7 +26,7 @@ Resources that I utilize will be referenced below.
 - [ ] Animation Tool
 - [X] Asset Manager
 - [ ] Efficient memory allocators (override new and delete)
-- [ ] FPS Indicator
+- [X] FPS Indicator
 - [X] FPS Tracker
 - [X] Game Main Loop
 - [X] Game State System

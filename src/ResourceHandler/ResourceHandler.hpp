@@ -1,8 +1,20 @@
-// File: ResourceHandler.hpp
-// Author: Alexander Brown
-// Version: 0.1
-// Changelog: 
-// Description: The interface for the programmer to utilize resources.
+/*
+ * =====================================================================================
+ *
+ *       Filename:  ResourceHandler.hpp
+ *
+ *    Description: The interface for the programmer to utilize resources.
+ *
+ *        Version:  1.0
+ *        Created:  05/01/2020 11:20:04 AM
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Alexander Brown (), alex.brown7711@gmail.com
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
 
 #ifndef _RESOURCE_HANDLER_HPP_ 
 #define _RESOURCE_HANDLER_HPP_ 
@@ -19,11 +31,11 @@
 // Custom Header Files
 #include "ResourceContainer.hpp"
 
-class ResourceHandler
+class ResourceHandler 
 {
   public:
     // Public Methods
-    static ResourceHandler* getPtr();
+    static ResourceHandler* Instance();
 
     ResourceContainer<sf::Font>        font;
     ResourceContainer<sf::Music>       music;

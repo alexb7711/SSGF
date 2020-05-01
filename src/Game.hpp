@@ -31,6 +31,7 @@
 #include "State/BaseState.hpp"
 #include "State/DefaultState.hpp"
 #include "GUI/Button.hpp"
+#include "Utilities/Clock.hpp"
 
 //===============================================================================
 //
@@ -55,11 +56,12 @@ class Game
     void quitGame();
 
     // Private Member Varibales
-    sf::RenderWindow* m_window;
+    sf::RenderWindow*      m_window;
     std::stack<BaseState*> m_state_stack;
-    
-    bool m_quit     = false;
-    bool m_popState = false;
+    sf::Clock*             m_clock;
+
+    bool                   m_quit     = false;
+    bool                   m_popState = false;
 };
 
 #endif

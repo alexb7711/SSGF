@@ -39,12 +39,12 @@ namespace GUI
       Widget(type)
     {}      
 
-    virtual bool isHovering(sf::RenderWindow* window)        = 0;
-    virtual void isClicked()                                 = 0;
-    virtual void execute()                                   = 0;
-    virtual void setFunction()                               = 0;
+    virtual bool isHovering(sf::RenderWindow* window) = 0;
+    virtual void isClicked()                          = 0;
+    virtual void execute()                            = 0;
+    virtual void setFunction()                        = 0;
 
-    virtual ~ClickableWidget() = default;
+    virtual ~ClickableWidget()                        = default;
   };
 
 }
