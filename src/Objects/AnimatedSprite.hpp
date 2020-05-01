@@ -16,24 +16,31 @@
  * =====================================================================================
  */
 
-#include <string>
-
-#include <SFML/Graphics.hpp>
-
 #ifndef _ANIMATE_H_
 #define _ANIMATE_H_
 
-class AnimatedSprite
+// C/C++ Standard Library
+#include <string>
+
+// SFML Libraries
+#include <SFML/Graphics.hpp>
+
+// Custom Header Files
+#include "AnimatedObject.hpp"
+
+class AnimatedSprite : public AnimatedObject
 {
   public:
     AnimatedSprite();
+
     AnimatedSprite(const sf::Texture& texture);
     AnimatedSprite(const sf::Texture& texture, std::vector<sf::IntRect> frames);
-    void setTexture(sf::Texture texture);
-    void addFrame(sf::IntRect frame);
-    void setFrameVector(std::vector<sf::IntRect> frames);
-    void update();
-    void render(sf::RenderTarget* renderer);
+    void setTexture(sf::Texture texture)                 override;
+    void addFrame(sf::IntRect frame)                     override;
+    void setFrameVector(std::vector<sf::IntRect> frames) override;
+    void update()                                        override;
+    void render(sf::RenderTarget* renderer)              override;
+
     ~AnimatedSprite();
 
   private:
