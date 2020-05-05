@@ -18,6 +18,7 @@
 
 #ifndef _ANIMATED_OBJECT_H_
 #define _ANIMATED_OBJECT_H_ 
+
 // C/C++ Standard Library
 
 // SFML Libraries
@@ -36,4 +37,5 @@ class AnimatedObject : public Object
     std::vector<sf::IntRect> m_frame;
     std::size_t m_current_frame = 0;
 };
+
 #endif

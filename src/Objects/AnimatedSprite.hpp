@@ -35,6 +35,7 @@ class AnimatedSprite : public AnimatedObject
 
     AnimatedSprite(const sf::Texture& texture);
     AnimatedSprite(const sf::Texture& texture, std::vector<sf::IntRect> frames);
+    
     void setTexture(sf::Texture texture)                 override;
     void addFrame(sf::IntRect frame)                     override;
     void setFrameVector(std::vector<sf::IntRect> frames) override;

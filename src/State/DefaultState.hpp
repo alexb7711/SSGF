@@ -26,6 +26,8 @@
 #include "BaseState.hpp"
 #include "../GUI/CenterStackWidget.hpp"
 #include "../GUI/FPSMonitor.hpp"
+#include "../Objects/Object.hpp"
+#include "../Objects/ObjectHandler.hpp"
 #include "../ResourceHandler/ResourceHandler.hpp"
 
 class Widget;
@@ -53,7 +55,9 @@ class DefaultState : public BaseState
     sf::Vector2f           m_circle_pos;
     GUI::CenterStackWidget m_stack;
 
-    // Testing FPS Monitor
+   ObjectHandler<Object> m_object;
+
+    // FPS Monitor
     FPSMonitor m_FPS;
 };
 

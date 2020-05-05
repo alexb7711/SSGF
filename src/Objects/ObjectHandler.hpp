@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  ObjectManager.hpp
+ *       Filename:  ObjectHandler.hpp
  *
  *    Description: Interface used by the user to manage objects in the game. 
  *
@@ -18,20 +18,27 @@
 
 #include <vector>
 
-#ifndef _OBJECT_MANAGER_H_
-#define _OBJECT_MANAGER_H_
+#ifndef _OBJECT_HANDLER_H_
+#define _OBJECT_HANDLER_H_
 
+// C/C++ Standard Library
+#include <vector>
+
+// SFML Libraries
 #include <SFML/Graphics.hpp>
 
+// Custom Header Files
+
 template <class Object>
-class ObjectManager
+class ObjectHandler
 {
   public:
     // Public Methods
-    ObjectManager();
-    ObjectManager(unsigned amount);
+    ObjectHandler();
+    ObjectHandler(unsigned amount);
 
-    void spawnObject(unsigned amount);
+    void spawnObject(Object* newObject);
+    void spawnObject(std::vector<Object> newObject);
     void deleteObject(unsigned amount);
     void deleteObject(unsigned amount, unsigned index);
     void wipeObjects();
@@ -39,7 +46,7 @@ class ObjectManager
     void update();
     void render(sf::RenderTarget* renderer);
 
-    ~ObjectManager();
+    ~ObjectHandler();
     
     // Public Member Variables
     std::vector<Object*> m_object;

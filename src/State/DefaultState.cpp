@@ -21,17 +21,18 @@
 #include "DefaultState.hpp"
 #include "../Game.hpp"
 
-
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  DefaultState::
- *  Description:  
- * =====================================================================================
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  DefaultState
+ *      Method:  DefaultState :: DefaultState
+ * Description:  
+ *--------------------------------------------------------------------------------------
  */
 DefaultState::DefaultState(Game* game):
   BaseState(game),
   m_circle(10.f),
-  m_stack(game->getWindow())
+  m_stack(game->getWindow()),
+  m_object(ObjectHandler<Object>())
 {
   m_circle.setFillColor(sf::Color::Green);
   m_circle_pos = m_circle.getPosition();
@@ -39,12 +40,12 @@ DefaultState::DefaultState(Game* game):
   return;
 }
 
-
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  DefaultState::updateState()
- *  Description:  
- * =====================================================================================
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  DefaultState
+ *      Method:  DefaultState :: updateState
+ * Description:  
+ *--------------------------------------------------------------------------------------
  */
 void DefaultState::updateState()
 {
@@ -54,13 +55,12 @@ void DefaultState::updateState()
   return;
 }
 
-
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  DefaultState::renderState
- *  Description: 
- *
- * =====================================================================================
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  DefaultState
+ *      Method:  DefaultState :: renderState
+ * Description:  
+ *--------------------------------------------------------------------------------------
  */
 void DefaultState::renderState(sf::RenderTarget* renderer)
 {
@@ -71,13 +71,12 @@ void DefaultState::renderState(sf::RenderTarget* renderer)
   return;
 }
 
-
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  DefaultState::handleInput
- *  Description: 
- *
- * =====================================================================================
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  DefaultState
+ *      Method:  DefaultState :: handleInput
+ * Description:  
+ *--------------------------------------------------------------------------------------
  */
 void DefaultState::handleInput()
 {
@@ -104,18 +103,22 @@ void DefaultState::handleInput()
   return;
 }
 
-
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  DefaultState::handleEvents
- *  Description: 
- *
- * =====================================================================================
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  DefaultState
+ *      Method:  DefaultState :: handleEvents
+ * Description:  
+ *--------------------------------------------------------------------------------------
  */
 void DefaultState::handleEvents(sf::Event e)
 {}
   
-//===============================================================================
-//
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  DefaultState
+ *      Method:  DefaultState :: ~DefaultState
+ * Description:  
+ *--------------------------------------------------------------------------------------
+ */
 DefaultState::~DefaultState()
 {}

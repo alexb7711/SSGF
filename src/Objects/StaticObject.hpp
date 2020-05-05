@@ -28,11 +28,11 @@
 // Custom Header Files
 #include "Object.hpp"
 
-class StillObject : public Object
+class StaticObject : public Object 
 {
   public:
-  private:
 
+  private:
 };
 
 #endif

@@ -29,9 +29,11 @@
 class Object
 {
   public:
+    Object() {}
     virtual void setTexture(sf::Texture texture)    = 0;
     virtual void update()                           = 0;
     virtual void render(sf::RenderTarget* renderer) = 0;
+    virtual ~Object() = default;
     
   private:
     sf::Texture m_texture;
