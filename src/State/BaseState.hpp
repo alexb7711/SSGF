@@ -10,6 +10,7 @@
 // C/C++ Standard Library
 
 // Custom Header Files
+#include <SFML/Graphics.hpp>
 
 // Forward Declarations
 class Game;
@@ -23,7 +24,7 @@ class BaseState
       p_game(game)
     {}
 
-    virtual void updateState()                            {}
+    virtual void updateState(const int& elapsed_time)     {}
     virtual void renderState(sf::RenderTarget* renderer ) = 0;
     virtual void handleInput()                            = 0;
     virtual void handleEvents(sf::Event e)                {}

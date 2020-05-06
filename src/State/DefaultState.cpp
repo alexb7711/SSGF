@@ -47,7 +47,7 @@ DefaultState::DefaultState(Game* game):
  * Description:  
  *--------------------------------------------------------------------------------------
  */
-void DefaultState::updateState()
+void DefaultState::updateState(const int& elapsed_time)
 {
   m_circle.setPosition(m_circle_pos);
   m_stack.update();

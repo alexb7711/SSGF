@@ -25,7 +25,7 @@ void Game::run()
   // Initialize FPS tracker
   sf::Time elapsed_time        = sf::Time::Zero;
   sf::Time lag                 = sf::Time::Zero;
-  int milliseconds_per_update  = 16; // millisends - About 62 FPS
+  int milliseconds_per_update  = 16; // milliseconds - About 62 FPS
 
 //  sf::Clock clock;
 
@@ -33,16 +33,19 @@ void Game::run()
   {
     // Reset the timer
     m_clock->restart();
-//    clock.restart();
     
     m_state_stack.top()->handleInput();
 
     // Catch the game up
     while (lag.asMilliseconds() >= milliseconds_per_update)
     {
-      m_state_stack.top()->updateState();
-      lag -= sf::milliseconds(milliseconds_per_update);
+      m_state_stack.top()->updateState(milliseconds_per_update);
+
+      lag          -= sf::milliseconds(milliseconds_per_update);
+      elapsed_time -= sf::milliseconds(milliseconds_per_update);
     }
+
+    m_state_stack.top()->updateState(elapsed_time.asMilliseconds());
     
     this->handleEvent();
     m_window->clear();
@@ -50,12 +53,9 @@ void Game::run()
     m_window->display();
     
     // Determine the amount of time that has elapsed
-//    elapsed_time = clock.getElapsedTime();
     elapsed_time = m_clock->getElapsedTime(); 
     lag         += elapsed_time;
 
-    // printf("FPS = %d\n", 1000/elapsed_time.asMilliseconds());
-    
     // If requested, pop the stack
     this->popState();
   }

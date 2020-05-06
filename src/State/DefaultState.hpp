@@ -43,7 +43,7 @@ class DefaultState : public BaseState
   public: 
     // Public Methods
     DefaultState(Game* game);
-    void updateState()                           override;
+    void updateState(const int& elapsed_time)          override;
     void renderState(sf::RenderTarget* renderer) override;
     void handleInput()                           override;
     void handleEvents(sf::Event e)               override;

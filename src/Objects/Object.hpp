@@ -31,7 +31,7 @@ class Object
   public:
     Object() {}
     virtual void setTexture(sf::Texture texture)    = 0;
-    virtual void update()                           = 0;
+    virtual void update(const int& elapsed_time)          = 0;
     virtual void render(sf::RenderTarget* renderer) = 0;
     virtual ~Object() = default;
     

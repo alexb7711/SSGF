@@ -43,7 +43,7 @@ class ObjectHandler
     void deleteObject(unsigned amount, unsigned index);
     void wipeObjects();
 
-    void update();
+    void update(int& elapsed_time);
     void render(sf::RenderTarget* renderer);
 
     ~ObjectHandler();

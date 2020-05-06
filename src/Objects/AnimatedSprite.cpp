@@ -67,7 +67,7 @@ void AnimatedSprite::setFrameVector(std::vector<sf::IntRect> frames)
 
 //===============================================================================
 // This is a cheap way of animating, going to have to make a robust way.
-void AnimatedSprite::update()
+void AnimatedSprite::update(const int& elapsed_time)
 {
   if (m_frame.size() > 0)
   {

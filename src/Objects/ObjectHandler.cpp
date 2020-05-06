@@ -131,10 +131,10 @@ void ObjectHandler<Object>::wipeObjects()
  *--------------------------------------------------------------------------------------
  */
 template <class Object>
-void ObjectHandler<Object>::update()
+void ObjectHandler<Object>::update(int& elapsed_time)
 {
   for (unsigned i = 0; i < m_object.size(); ++i)
-    m_object[i]->update();
+    m_object[i]->update(elapsed_time);
 
   return;
 }
