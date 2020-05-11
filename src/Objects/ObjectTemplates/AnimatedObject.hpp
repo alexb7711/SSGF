@@ -78,7 +78,7 @@ class AnimatedObject : public Object
      * Description:  
      *--------------------------------------------------------------------------------------
      */
-    void update(const int& elapsed_time)
+    void updateAnimation(const int& elapsed_time)
     {
       m_elapsed_time += elapsed_time;
       std::cout << m_elapsed_time << std::endl;

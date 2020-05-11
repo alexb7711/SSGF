@@ -23,7 +23,6 @@
  *      Method:  Dragon :: Dragon
  * Description: Dragon
  * 
- *
  *--------------------------------------------------------------------------------------
  */
 Dragon::Dragon()
@@ -47,27 +46,27 @@ Dragon::Dragon()
  *       Class:  Dragon
  *      Method:  Dragon :: setTexture
  * Description: 
+ *
  *--------------------------------------------------------------------------------------
  */
-void Dragon::setTexture(sf::Texture texture)
-{
-  setTexture(texture);
-  return;
-}
+//void Dragon::setTexture(sf::Texture texture)
+//{
+//  setTexture(texture);
+//  return;
+//}
 
 /*
  *--------------------------------------------------------------------------------------
  *       Class:  Dragon
  *      Method:  Dragon :: update
  * Description: Dragon
- * setTexture
  *
  *--------------------------------------------------------------------------------------
  */
 void Dragon::update(const int& elapsed_time)
 {
-  update(elapsed_time);
-  return;
+ updateAnimation(elapsed_time);
+ return;
 }
  
 /*
@@ -75,22 +74,20 @@ void Dragon::update(const int& elapsed_time)
  *       Class:  Dragon
  *      Method:  Dragon :: render
  * Description: Dragon
- * setTexture
  *
  *--------------------------------------------------------------------------------------
  */
-void Dragon::render(sf::RenderTarget* renderer)
-{
-  render(renderer);
-  return;
-}
+//void Dragon::render(sf::RenderTarget* renderer)
+//{
+//  render(renderer);
+//  return;
+//}
 
 /*
  *--------------------------------------------------------------------------------------
  *       Class:  Dragon
  *      Method:  Dragon :: addFrame
  * Description: Dragon
- * setTexture
  *
  *--------------------------------------------------------------------------------------
  */
@@ -105,37 +102,34 @@ void Dragon::addFrame(sf::IntRect frame)
  *       Class:  Dragon
  *      Method:  Dragon :: setFrameVector
  * Description: Dragon
- * setTexture
  *
  *--------------------------------------------------------------------------------------
  */
-void Dragon::setFrameVector(std::vector<sf::IntRect> frames)
-{
-  setFrameVector(frames);
-  return;
-}
+//void Dragon::setFrameVector(std::vector<sf::IntRect> frames)
+//{
+//  AnimatedObject::setFrameVector(frames);
+//  return;
+//}
 
 /*
  *--------------------------------------------------------------------------------------
  *       Class:  Dragon
  *      Method:  Dragon :: setAnimationDelay
  * Description: Dragon
- * setTexture
  *
  *--------------------------------------------------------------------------------------
  */
-void Dragon::setAnimationDelay(float delay)
-{
-  setAnimationDelay(delay);
-  return;
-}
+//void Dragon::setAnimationDelay(float delay)
+//{
+//  setAnimationDelay(delay);
+//  return;
+//}
 
 /*
  *--------------------------------------------------------------------------------------
  *       Class:  Dragon
  *      Method:  Dragon :: updatePosition
  * Description: Dragon
- * setTexture
  *
  *--------------------------------------------------------------------------------------
  */
@@ -147,7 +141,6 @@ void Dragon::updatePosition()
  *       Class:  Dragon
  *      Method:  Dragon :: ~Dragon
  * Description: Dragon
- * setTexture
  *
  *--------------------------------------------------------------------------------------
  */

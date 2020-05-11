@@ -59,7 +59,7 @@ class DefaultState : public BaseState
     sf::Vector2f           m_circle_pos;
 
     // Testing Dragon
-//    Dragon m_dragon; 
+   Dragon m_dragon; 
 
     // FPS Monitor
     FPSMonitor m_FPS;
