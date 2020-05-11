@@ -43,28 +43,28 @@ AnimatedSprite::AnimatedSprite(const sf::Texture& texture, std::vector<sf::IntRe
 
 //===============================================================================
 //
-void AnimatedSprite::setTexture(sf::Texture texture)
-{  
-  m_texture = texture;
-  m_sprite.setTexture(m_texture, true);
-  return;
-}
+//void AnimatedSprite::setTexture(sf::Texture texture)
+//{  
+//  m_texture = texture;
+//  m_sprite.setTexture(m_texture, true);
+//  return;
+//}
     
 //===============================================================================
 //
-void AnimatedSprite::addFrame(sf::IntRect frame)
-{
-  m_frame.push_back(frame);
-  return;
-}
+//void AnimatedSprite::addFrame(sf::IntRect frame)
+//{
+//  m_frame.push_back(frame);
+//  return;
+//}
 
 //===============================================================================
 //
-void AnimatedSprite::setFrameVector(std::vector<sf::IntRect> frames)
-{
-  m_frame = frames;
-  return;
-}
+//void AnimatedSprite::setFrameVector(std::vector<sf::IntRect> frames)
+//{
+//  m_frame = frames;
+//  return;
+//}
  
 
 /*

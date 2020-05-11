@@ -30,14 +30,28 @@ class Object
 {
   public:
     Object() {}
-    virtual void setTexture(sf::Texture texture)    = 0;
+
+    /*
+     *--------------------------------------------------------------------------------------
+     *       Class:  Object
+     *      Method:  Object :: setTexture
+     * Description:  Sets the object with a given texture.
+     *--------------------------------------------------------------------------------------
+     */
+    virtual void setTexture(sf::Texture texture)
+    {
+      m_texture = texture;
+      m_sprite.setTexture(m_texture, true);
+      return;
+    }
+
     virtual void update(const int& elapsed_time)    = 0;
     virtual void render(sf::RenderTarget* renderer) = 0;
-    virtual ~Object() = default;
+    virtual ~Object()                               = default;
     
-  private:
+  protected:
     sf::Texture m_texture;
-    sf::Sprite m_sprite;
+    sf::Sprite  m_sprite;
 };
 
 #endif

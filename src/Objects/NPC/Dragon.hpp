@@ -25,7 +25,7 @@
 
 // Custom Header Files
 #include "../ObjectTemplates/DynamicAnimatedObject.hpp"
-#include "../AnimatedSprite.hpp"
+//#include "../AnimatedSprite.hpp"
 
 class Dragon : public DynamicAnimatedAnimatedObject
 {
@@ -37,13 +37,13 @@ class Dragon : public DynamicAnimatedAnimatedObject
     void render(sf::RenderTarget* renderer)              override;
     void addFrame(sf::IntRect frame)                     override;
     void setFrameVector(std::vector<sf::IntRect> frames) override;
-    void setAnimationDelay(float delay)                    override;
+    void setAnimationDelay(float delay)                  override;
     void updatePosition()                                override;
 
     ~Dragon();
 
   private:
-    AnimatedSprite m_animated_sprite;
+//    AnimatedSprite m_animated_sprite;
 
 };
 

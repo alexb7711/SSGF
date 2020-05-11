@@ -36,18 +36,18 @@ class AnimatedSprite : public AnimatedObject
     AnimatedSprite(const sf::Texture& texture);
     AnimatedSprite(const sf::Texture& texture, std::vector<sf::IntRect> frames);
     
-    void setTexture(sf::Texture texture)                 override;
-    void addFrame(sf::IntRect frame)                     override;
-    void setFrameVector(std::vector<sf::IntRect> frames) override;
-    void setAnimationDelay(float delay)                  override;
+//    void setTexture(sf::Texture texture)                 override;
+//    void addFrame(sf::IntRect frame)                     override;
+//    void setFrameVector(std::vector<sf::IntRect> frames) override;
+//    void setAnimationDelay(float delay)                  override;
     void update(const int& elapsed_time)                 override;
     void render(sf::RenderTarget* renderer)              override;
 
     ~AnimatedSprite();
 
   private:
-    int                      m_delay         = 0;
-    int                      m_elapsed_time  = 0;
+//    int                      m_delay         = 0;
+//    int                      m_elapsed_time  = 0;
     std::size_t              m_current_frame = 0;
     std::vector<sf::IntRect> m_frame;
     sf::Sprite               m_sprite;

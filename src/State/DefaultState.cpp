@@ -41,7 +41,7 @@ DefaultState::DefaultState(Game* game):
   m_resource_handler->texture.add("SpriteSheet");
 
   // Testing Dragon
-  m_dragon.setTexture(m_resource_handler->texture.get("SpriteSheet"));
+//  m_dragon.setTexture(m_resource_handler->texture.get("SpriteSheet"));
 
   return;
 }
@@ -60,7 +60,7 @@ void DefaultState::updateState(const int& elapsed_time)
   m_FPS.update();
   
   // Testing Dragon
-  m_dragon.update(elapsed_time);
+//  m_dragon.update(elapsed_time);
   return;
 }
 
@@ -78,7 +78,7 @@ void DefaultState::renderState(sf::RenderTarget* renderer)
   m_FPS.render(renderer);
 
   // Testing Dragon
-  m_dragon.render(renderer);
+//  m_dragon.render(renderer);
   return;
 }
 

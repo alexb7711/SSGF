@@ -37,7 +37,7 @@ Dragon::Dragon()
   
   setFrameVector(dragonWalk);
 
-  m_animated_sprite.setAnimationDelay(250);
+  setAnimationDelay(250);
 
   return;
 }
@@ -51,7 +51,7 @@ Dragon::Dragon()
  */
 void Dragon::setTexture(sf::Texture texture)
 {
-  m_animated_sprite.setTexture(texture);
+  setTexture(texture);
   return;
 }
 
@@ -66,7 +66,7 @@ void Dragon::setTexture(sf::Texture texture)
  */
 void Dragon::update(const int& elapsed_time)
 {
-  m_animated_sprite.update(elapsed_time);
+  update(elapsed_time);
   return;
 }
  
@@ -81,7 +81,7 @@ void Dragon::update(const int& elapsed_time)
  */
 void Dragon::render(sf::RenderTarget* renderer)
 {
-  m_animated_sprite.render(renderer);
+  render(renderer);
   return;
 }
 
@@ -96,7 +96,7 @@ void Dragon::render(sf::RenderTarget* renderer)
  */
 void Dragon::addFrame(sf::IntRect frame)
 {
-  m_animated_sprite.addFrame(frame);
+  addFrame(frame);
   return;
 }
 
@@ -111,7 +111,7 @@ void Dragon::addFrame(sf::IntRect frame)
  */
 void Dragon::setFrameVector(std::vector<sf::IntRect> frames)
 {
-  m_animated_sprite.setFrameVector(frames);
+  setFrameVector(frames);
   return;
 }
 
@@ -126,7 +126,7 @@ void Dragon::setFrameVector(std::vector<sf::IntRect> frames)
  */
 void Dragon::setAnimationDelay(float delay)
 {
-  m_animated_sprite.setAnimationDelay(delay);
+  setAnimationDelay(delay);
   return;
 }
 
