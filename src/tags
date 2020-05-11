@@ -7,10 +7,6 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
 AnimatedObject	Objects/ObjectTemplates/AnimatedObject.hpp	/^class AnimatedObject : public Object$/;"	c
-AnimatedSprite	Objects/AnimatedSprite.cpp	/^AnimatedSprite::AnimatedSprite()$/;"	f	class:AnimatedSprite
-AnimatedSprite	Objects/AnimatedSprite.cpp	/^AnimatedSprite::AnimatedSprite(const sf::Texture& texture)$/;"	f	class:AnimatedSprite
-AnimatedSprite	Objects/AnimatedSprite.cpp	/^AnimatedSprite::AnimatedSprite(const sf::Texture& texture, std::vector<sf::IntRect> frames)$/;"	f	class:AnimatedSprite
-AnimatedSprite	Objects/AnimatedSprite.hpp	/^class AnimatedSprite : public AnimatedObject$/;"	c
 BaseState	State/BaseState.hpp	/^    BaseState(Game* game):$/;"	f	class:BaseState
 BaseState	State/BaseState.hpp	/^class BaseState $/;"	c
 Button	GUI/Button.cpp	/^  Button::Button():$/;"	f	class:GUI::Button
@@ -56,7 +52,6 @@ StaticObject	Objects/ObjectTemplates/StaticObject.hpp	/^class StaticObject : pub
 Widget	GUI/Widget.hpp	/^    Widget(std::string type):$/;"	f	class:GUI::Widget
 Widget	GUI/Widget.hpp	/^  class Widget $/;"	c	namespace:GUI
 _ANIMATED_OBJECT_H_	Objects/ObjectTemplates/AnimatedObject.hpp	/^#define _ANIMATED_OBJECT_H_ /;"	d
-_ANIMATE_H_	Objects/AnimatedSprite.hpp	/^#define _ANIMATE_H_$/;"	d
 _BASE_STATE_H_	State/BaseState.hpp	/^#define _BASE_STATE_H_ /;"	d
 _BUTTON_H_	GUI/Button.hpp	/^#define _BUTTON_H_ /;"	d
 _CENTER_STACK_WIDGETS_H_	GUI/CenterStackWidget.hpp	/^#define _CENTER_STACK_WIDGETS_H_ /;"	d
@@ -76,7 +71,6 @@ _STATIC_ANIMATED_OBJECT_H_	Objects/ObjectTemplates/StaticAnimatedObject.hpp	/^#d
 _STILL_OBJECT_H_	Objects/ObjectTemplates/StaticObject.hpp	/^#define _STILL_OBJECT_H_ /;"	d
 _WIDGET_H_	GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
 add	ResourceHandler/ResourceContainer.hpp	/^    void add(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
-addFrame	Objects/NPC/Dragon.cpp	/^void Dragon::addFrame(sf::IntRect frame)$/;"	f	class:Dragon	typeref:typename:void
 addFrame	Objects/ObjectTemplates/AnimatedObject.hpp	/^    virtual void addFrame(sf::IntRect frame) $/;"	f	class:AnimatedObject	typeref:typename:void
 addWidget	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::addWidget()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 calculatePositions	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::calculatePositions()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
@@ -105,18 +99,16 @@ m_button_spacing	GUI/CenterStackWidget.hpp	/^  float                m_button_spa
 m_circle	State/DefaultState.hpp	/^    sf::CircleShape        m_circle;$/;"	m	class:DefaultState	typeref:typename:sf::CircleShape
 m_circle_pos	State/DefaultState.hpp	/^    sf::Vector2f           m_circle_pos;$/;"	m	class:DefaultState	typeref:typename:sf::Vector2f
 m_clock	Game.hpp	/^    sf::Clock*             m_clock;$/;"	m	class:Game	typeref:typename:sf::Clock *
-m_current_frame	Objects/AnimatedSprite.hpp	/^    std::size_t              m_current_frame = 0;$/;"	m	class:AnimatedSprite	typeref:typename:std::size_t
 m_current_frame	Objects/ObjectTemplates/AnimatedObject.hpp	/^    std::size_t              m_current_frame = 0;$/;"	m	class:AnimatedObject	typeref:typename:std::size_t
 m_delay	Objects/ObjectTemplates/AnimatedObject.hpp	/^    int                      m_delay         = 0;$/;"	m	class:AnimatedObject	typeref:typename:int
 m_delayTimer	GUI/FPSMonitor.hpp	/^    sf::Clock m_delayTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
-m_dragon	State/DefaultState.hpp	/^   Dragon m_dragon; $/;"	m	class:DefaultState	typeref:typename:Dragon
+m_dragon	State/DefaultState.hpp	/^    Dragon                 m_dragon; $/;"	m	class:DefaultState	typeref:typename:Dragon
 m_elapsed_time	Objects/ObjectTemplates/AnimatedObject.hpp	/^    int                      m_elapsed_time  = 0;$/;"	m	class:AnimatedObject	typeref:typename:int
 m_extension	ResourceHandler/ResourceContainer.hpp	/^    const std::string m_extension;$/;"	m	class:ResourceContainer	typeref:typename:const std::string
 m_folder	ResourceHandler/ResourceContainer.hpp	/^    const std::string m_folder;$/;"	m	class:ResourceContainer	typeref:typename:const std::string
 m_font	GUI/FPSMonitor.hpp	/^    sf::Font  m_font;$/;"	m	class:FPSMonitor	typeref:typename:sf::Font
 m_fps	GUI/FPSMonitor.hpp	/^    float m_fps      = 0;$/;"	m	class:FPSMonitor	typeref:typename:float
 m_fpsTimer	GUI/FPSMonitor.hpp	/^    sf::Clock m_fpsTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
-m_frame	Objects/AnimatedSprite.hpp	/^    std::vector<sf::IntRect> m_frame;$/;"	m	class:AnimatedSprite	typeref:typename:std::vector<sf::IntRect>
 m_frame	Objects/ObjectTemplates/AnimatedObject.hpp	/^    std::vector<sf::IntRect> m_frame;$/;"	m	class:AnimatedObject	typeref:typename:std::vector<sf::IntRect>
 m_frameCount	GUI/FPSMonitor.hpp	/^    int m_frameCount = 0;$/;"	m	class:FPSMonitor	typeref:typename:int
 m_object	Objects/ObjectHandler.hpp	/^    std::vector<Object*> m_object;$/;"	m	class:ObjectHandler	typeref:typename:std::vector<Object * >
@@ -125,12 +117,10 @@ m_popState	Game.hpp	/^    bool                   m_popState = false;$/;"	m	class
 m_quit	Game.hpp	/^    bool                   m_quit     = false;$/;"	m	class:Game	typeref:typename:bool
 m_resource	ResourceHandler/ResourceContainer.hpp	/^    std::map<std::string, Resource> m_resource;$/;"	m	class:ResourceContainer	typeref:typename:std::map<std::string,Resource>
 m_resource_handler	State/DefaultState.hpp	/^    ResourceHandler*       m_resource_handler;$/;"	m	class:DefaultState	typeref:typename:ResourceHandler *
-m_sprite	Objects/AnimatedSprite.hpp	/^    sf::Sprite               m_sprite;$/;"	m	class:AnimatedSprite	typeref:typename:sf::Sprite
 m_sprite	Objects/ObjectTemplates/Object.hpp	/^    sf::Sprite  m_sprite;$/;"	m	class:Object	typeref:typename:sf::Sprite
 m_stack	State/DefaultState.hpp	/^    GUI::CenterStackWidget m_stack;$/;"	m	class:DefaultState	typeref:typename:GUI::CenterStackWidget
 m_state_stack	Game.hpp	/^    std::stack<BaseState*> m_state_stack;$/;"	m	class:Game	typeref:typename:std::stack<BaseState * >
 m_text	GUI/FPSMonitor.hpp	/^    sf::Text  m_text;$/;"	m	class:FPSMonitor	typeref:typename:sf::Text
-m_texture	Objects/AnimatedSprite.hpp	/^    sf::Texture              m_texture;$/;"	m	class:AnimatedSprite	typeref:typename:sf::Texture
 m_texture	Objects/ObjectTemplates/Object.hpp	/^    sf::Texture m_texture;$/;"	m	class:Object	typeref:typename:sf::Texture
 m_widget_type	GUI/Widget.hpp	/^    std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
 m_window	Game.hpp	/^    sf::RenderWindow*      m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
@@ -145,12 +135,11 @@ remove	ResourceHandler/ResourceContainer.hpp	/^    void remove (const std::strin
 render	GUI/Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
 render	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 render	GUI/FPSMonitor.cpp	/^void FPSMonitor::render(sf::RenderTarget* renderer)$/;"	f	class:FPSMonitor	typeref:typename:void
-render	Objects/AnimatedSprite.cpp	/^void AnimatedSprite::render(sf::RenderTarget* renderer)$/;"	f	class:AnimatedSprite	typeref:typename:void
 render	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::render(sf::RenderTarget* renderer)$/;"	f	class:ObjectHandler	typeref:typename:void
 render	Objects/ObjectTemplates/AnimatedObject.hpp	/^    void render(sf::RenderTarget* renderer)$/;"	f	class:AnimatedObject	typeref:typename:void
+render	Objects/ObjectTemplates/StaticObject.hpp	/^    virtual void render(sf::RenderTarget* renderer)$/;"	f	class:StaticObject	typeref:typename:void
 renderState	State/DefaultState.cpp	/^void DefaultState::renderState(sf::RenderTarget* renderer)$/;"	f	class:DefaultState	typeref:typename:void
 run	Game.cpp	/^void Game::run()$/;"	f	class:Game	typeref:typename:void
-setAnimationDelay	Objects/AnimatedSprite.cpp	/^void AnimatedSprite::setAnimationDelay(float delay)$/;"	f	class:AnimatedSprite	typeref:typename:void
 setAnimationDelay	Objects/ObjectTemplates/AnimatedObject.hpp	/^    virtual void setAnimationDelay(float delay)$/;"	f	class:AnimatedObject	typeref:typename:void
 setFrameVector	Objects/ObjectTemplates/AnimatedObject.hpp	/^    virtual void setFrameVector(std::vector<sf::IntRect> frames)$/;"	f	class:AnimatedObject	typeref:typename:void
 setFunction	GUI/Button.cpp	/^void Button::setFunction()$/;"	f	class:GUI::Button	typeref:typename:void
@@ -168,16 +157,15 @@ uint	GUI/CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typen
 update	GUI/Button.cpp	/^  void Button::update(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:void
 update	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 update	GUI/FPSMonitor.cpp	/^void FPSMonitor::update()$/;"	f	class:FPSMonitor	typeref:typename:void
-update	Objects/AnimatedSprite.cpp	/^void AnimatedSprite::update(const int& elapsed_time)$/;"	f	class:AnimatedSprite	typeref:typename:void
 update	Objects/NPC/Dragon.cpp	/^void Dragon::update(const int& elapsed_time)$/;"	f	class:Dragon	typeref:typename:void
 update	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::update(int& elapsed_time)$/;"	f	class:ObjectHandler	typeref:typename:void
+update	Objects/ObjectTemplates/StaticObject.hpp	/^    virtual void update(const int& elapsed_time)$/;"	f	class:StaticObject	typeref:typename:void
 updateAnimation	Objects/ObjectTemplates/AnimatedObject.hpp	/^    void updateAnimation(const int& elapsed_time)$/;"	f	class:AnimatedObject	typeref:typename:void
 updatePosition	Objects/NPC/Dragon.cpp	/^void Dragon::updatePosition()$/;"	f	class:Dragon	typeref:typename:void
 updateState	State/BaseState.hpp	/^    virtual void updateState(const int& elapsed_time)     {}$/;"	f	class:BaseState	typeref:typename:void
 updateState	State/DefaultState.cpp	/^void DefaultState::updateState(const int& elapsed_time)$/;"	f	class:DefaultState	typeref:typename:void
 util	Utilities/Clock.hpp	/^namespace util$/;"	n
 wipeObjects	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::wipeObjects()$/;"	f	class:ObjectHandler	typeref:typename:void
-~AnimatedSprite	Objects/AnimatedSprite.cpp	/^AnimatedSprite::~AnimatedSprite()$/;"	f	class:AnimatedSprite
 ~Button	GUI/Button.cpp	/^  Button::~Button()$/;"	f	class:GUI::Button
 ~CenterStackWidget	GUI/CenterStackWidget.cpp	/^CenterStackWidget::~CenterStackWidget()$/;"	f	class:GUI::CenterStackWidget
 ~DefaultState	State/DefaultState.cpp	/^DefaultState::~DefaultState()$/;"	f	class:DefaultState

@@ -52,14 +52,12 @@ class DefaultState : public BaseState
 
   private:
     // Private Member Variables
-    GUI::CenterStackWidget m_stack;
-    ObjectHandler<Object>  m_object;
-    ResourceHandler*       m_resource_handler;
     sf::CircleShape        m_circle;
     sf::Vector2f           m_circle_pos;
-
-    // Testing Dragon
-   Dragon m_dragon; 
+    Dragon                 m_dragon; 
+    ObjectHandler<Object>  m_object;
+    ResourceHandler*       m_resource_handler;
+    GUI::CenterStackWidget m_stack;
 
     // FPS Monitor
     FPSMonitor m_FPS;

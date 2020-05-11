@@ -12,7 +12,6 @@ SRC    = main.cpp                                   \
 	 ../src/Objects/ObjectHandler.cpp	    \
 	 ../src/State/DefaultState.cpp              \
 	 ../src/ResourceHandler/ResourceHandler.cpp \
-	 # ../src/Objects/AnimatedSprite.cpp	    \
 
 OBJ    = $(SRC:.c=.o)
 

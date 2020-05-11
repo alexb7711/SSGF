@@ -1,5 +1,5 @@
 # SSGF [Super Small Game Framework]
-SSGF is a 2D game framework written in C/C++ that is based off [SFML](https://www.sfml-dev.org/). The goal of this project is to create a small game framework that is stable and extensible.
+SSGF is a 2D game framework written in C/C++ that is based off [SFML](https://www.sfml-dev.org/). The goal of this project is to create a small game framework that is stable and extensible. (Not sure if it going to just be 2D or it will have isometric capabilities yet).
 
 # Development Goals
 * Effective use of threads
@@ -9,7 +9,7 @@ SSGF is a 2D game framework written in C/C++ that is based off [SFML](https://ww
 * Sprite Rendering and Animation
 
 # Disclaimer
-I have never developed a full game before, I've only messed around with SFML a few times and created some simple games like Pong and Dodger. **There will be bugs, inefficiencies, and general weirdness to this code base in the initial stages while I learn how all this stuff works.**
+I have never developed a full game before, I've only messed around with SFML a few times and created some simple games like Pong and Dodger. ***There will be bugs, inefficiencies, and general weirdness to this code base in the initial stages while I learn how all this stuff works.***
 
 Resources that I utilize will be referenced below.
 
@@ -23,16 +23,17 @@ Resources that I utilize will be referenced below.
 
 
 # TODO
-- [ ] Animation Tool
+- [X] Animation Tool
 - [X] Asset Manager
-- [ ] Efficient memory allocators (override new and delete)
+- [ ] Collision detection
+- [ ] Efficient memory allocation and management (override new and delete)
 - [X] FPS Indicator
 - [X] FPS Tracker
 - [X] Game Main Loop
 - [X] Game State System
-- [X] GUI generator
+- [O] GUI generator
 	- [X] Button
 	- [X] Widget
 	- [X] Button Stacker
+- [ ] Map creation tool?
 - [X] State manager (push/pop states on request)
-- [ ] Template singleton for manager declarations

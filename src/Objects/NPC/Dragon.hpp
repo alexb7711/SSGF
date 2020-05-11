@@ -32,12 +32,7 @@ class Dragon : public DynamicAnimatedAnimatedObject
   public:
     Dragon();
 
-//    void setTexture(sf::Texture texture)                 override;
     void update(const int& elapsed_time)                 override;
-//    void render(sf::RenderTarget* renderer)              override;
-    void addFrame(sf::IntRect frame)                     override;
-//    void setFrameVector(std::vector<sf::IntRect> frames) override;
-//    void setAnimationDelay(float delay)                  override;
     void updatePosition()                                override;
 
     ~Dragon();

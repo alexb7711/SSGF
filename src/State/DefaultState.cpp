@@ -30,10 +30,10 @@
  */
 DefaultState::DefaultState(Game* game):
   BaseState(game),
-  m_stack(game->getWindow()),
+  m_circle(10.f),
   m_object(ObjectHandler<Object>()),
   m_resource_handler(ResourceHandler::Instance()),
-  m_circle(10.f)
+  m_stack(game->getWindow())
 {
   m_circle.setFillColor(sf::Color::Green);
   m_circle_pos = m_circle.getPosition();
