@@ -30,12 +30,18 @@
  */
 DefaultState::DefaultState(Game* game):
   BaseState(game),
-  m_circle(10.f),
   m_stack(game->getWindow()),
-  m_object(ObjectHandler<Object>())
+  m_object(ObjectHandler<Object>()),
+  m_resource_handler(ResourceHandler::Instance()),
+  m_circle(10.f)
 {
   m_circle.setFillColor(sf::Color::Green);
   m_circle_pos = m_circle.getPosition();
+
+  m_resource_handler->texture.add("SpriteSheet");
+
+  // Testing Dragon
+  m_dragon.setTexture(m_resource_handler->texture.get("SpriteSheet"));
 
   return;
 }
@@ -52,6 +58,9 @@ void DefaultState::updateState(const int& elapsed_time)
   m_circle.setPosition(m_circle_pos);
   m_stack.update();
   m_FPS.update();
+  
+  // Testing Dragon
+  m_dragon.update(elapsed_time);
   return;
 }
 
@@ -65,9 +74,11 @@ void DefaultState::updateState(const int& elapsed_time)
 void DefaultState::renderState(sf::RenderTarget* renderer)
 {
   renderer->draw(m_circle);
-//  renderer->draw(m_text);
   m_stack.render(renderer);
   m_FPS.render(renderer);
+
+  // Testing Dragon
+  m_dragon.render(renderer);
   return;
 }
 

@@ -32,6 +32,7 @@ class AnimatedObject : public Object
   public:
     virtual void addFrame(sf::IntRect frame)                     = 0;
     virtual void setFrameVector(std::vector<sf::IntRect> frames) = 0;
+    virtual void setAnimationDelay(float delay)                  = 0;
 
   private:
     std::vector<sf::IntRect> m_frame;

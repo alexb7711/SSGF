@@ -45,7 +45,7 @@ void Game::run()
       elapsed_time -= sf::milliseconds(milliseconds_per_update);
     }
 
-    m_state_stack.top()->updateState(elapsed_time.asMilliseconds());
+//    m_state_stack.top()->updateState(elapsed_time.asMilliseconds());
     
     this->handleEvent();
     m_window->clear();

@@ -17,6 +17,7 @@
  */
 
 #include "AnimatedSprite.hpp"
+#include <iostream>
 
 //===============================================================================
 //
@@ -64,17 +65,36 @@ void AnimatedSprite::setFrameVector(std::vector<sf::IntRect> frames)
   m_frame = frames;
   return;
 }
+ 
+
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  AnimatedSprite
+ *      Method:  AnimatedSprite :: setAnimationDelay
+ * Description:  
+ *--------------------------------------------------------------------------------------
+ */
+void AnimatedSprite::setAnimationDelay(float delay)
+{
+  m_delay = delay;
+  return;
+}
 
 //===============================================================================
-// This is a cheap way of animating, going to have to make a robust way.
+//
 void AnimatedSprite::update(const int& elapsed_time)
 {
-  if (m_frame.size() > 0)
+  m_elapsed_time += elapsed_time;
+  std::cout << m_elapsed_time << std::endl;
+
+  if (m_frame.size() > 0 && m_elapsed_time >= m_delay)
   {
+    // TODO:  May be a more efficient way of doing this
     if (m_current_frame++ >= m_frame.size()-1)   
       m_current_frame = 0;
     
     m_sprite.setTextureRect(m_frame[m_current_frame]);
+    m_elapsed_time = 0;
   }
 
   return;

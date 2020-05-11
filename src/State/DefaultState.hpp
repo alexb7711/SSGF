@@ -26,7 +26,8 @@
 #include "BaseState.hpp"
 #include "../GUI/CenterStackWidget.hpp"
 #include "../GUI/FPSMonitor.hpp"
-#include "../Objects/Object.hpp"
+#include "../Objects/NPC/Dragon.hpp"
+#include "../Objects/ObjectTemplates/Object.hpp"
 #include "../Objects/ObjectHandler.hpp"
 #include "../ResourceHandler/ResourceHandler.hpp"
 
@@ -43,7 +44,7 @@ class DefaultState : public BaseState
   public: 
     // Public Methods
     DefaultState(Game* game);
-    void updateState(const int& elapsed_time)          override;
+    void updateState(const int& elapsed_time)    override;
     void renderState(sf::RenderTarget* renderer) override;
     void handleInput()                           override;
     void handleEvents(sf::Event e)               override;
@@ -51,11 +52,14 @@ class DefaultState : public BaseState
 
   private:
     // Private Member Variables
+    GUI::CenterStackWidget m_stack;
+    ObjectHandler<Object>  m_object;
+    ResourceHandler*       m_resource_handler;
     sf::CircleShape        m_circle;
     sf::Vector2f           m_circle_pos;
-    GUI::CenterStackWidget m_stack;
 
-   ObjectHandler<Object> m_object;
+    // Testing Dragon
+    Dragon m_dragon; 
 
     // FPS Monitor
     FPSMonitor m_FPS;

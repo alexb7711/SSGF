@@ -9,6 +9,7 @@ SRC    = main.cpp                                   \
 	 ../src/GUI/CenterStackWidget.cpp           \
 	 ../src/GUI/FPSMonitor.cpp                  \
 	 ../src/Objects/AnimatedSprite.cpp	    \
+	 ../src/Objects/NPC/Dragon.cpp		    \
 	 ../src/Objects/ObjectHandler.cpp	    \
 	 ../src/State/DefaultState.cpp              \
 	 ../src/ResourceHandler/ResourceHandler.cpp \

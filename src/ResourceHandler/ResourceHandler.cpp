@@ -51,5 +51,6 @@ ResourceHandler* ResourceHandler::Instance()
  *--------------------------------------------------------------------------------------
  */
 ResourceHandler::ResourceHandler():
-  font("font", "otf")
+  font("font", "otf"),
+  texture("texture", "png")
 {}

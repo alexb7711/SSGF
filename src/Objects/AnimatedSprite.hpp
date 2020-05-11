@@ -26,7 +26,7 @@
 #include <SFML/Graphics.hpp>
 
 // Custom Header Files
-#include "AnimatedObject.hpp"
+#include "ObjectTemplates/AnimatedObject.hpp"
 
 class AnimatedSprite : public AnimatedObject
 {
@@ -39,16 +39,19 @@ class AnimatedSprite : public AnimatedObject
     void setTexture(sf::Texture texture)                 override;
     void addFrame(sf::IntRect frame)                     override;
     void setFrameVector(std::vector<sf::IntRect> frames) override;
+    void setAnimationDelay(float delay)                  override;
     void update(const int& elapsed_time)                 override;
     void render(sf::RenderTarget* renderer)              override;
 
     ~AnimatedSprite();
 
   private:
+    int                      m_delay         = 0;
+    int                      m_elapsed_time  = 0;
+    std::size_t              m_current_frame = 0;
     std::vector<sf::IntRect> m_frame;
-    std::size_t m_current_frame = 0;
-    sf::Texture m_texture;
-    sf::Sprite m_sprite;
+    sf::Sprite               m_sprite;
+    sf::Texture              m_texture;
 };
 
 #endif
