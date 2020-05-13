@@ -31,27 +31,6 @@
 class StaticObject : public Object 
 {
   public:
-
-    /*
-     *--------------------------------------------------------------------------------------
-     *       Class:  StaticObject
-     *      Method:  StaticObject :: update
-     * Description:  
-     *--------------------------------------------------------------------------------------
-     */
-    virtual void update(const int& elapsed_time)
-    {}
-
-    /*
-     *--------------------------------------------------------------------------------------
-     *       Class:  StaticObject
-     *      Method:  StaticObject :: render
-     * Description:  
-     *--------------------------------------------------------------------------------------
-     */
-    virtual void render(sf::RenderTarget* renderer)
-    {}
-
   private:
 };
 

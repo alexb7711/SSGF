@@ -20,6 +20,10 @@
 #define _DEFAULT_STATE_H_ 
 
 // C/C++ Standard Library
+#include <string>
+
+// SFML Libraries
+#include <SFML/Graphics.hpp>
 #include <SFML/Graphics.hpp>
 
 // Custom Header Files

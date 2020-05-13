@@ -48,7 +48,7 @@ class ResourceContainer
 
     //===========================================================================
     //
-    bool exists (const std::string& name)
+    bool exists(const std::string& name)
     {
       return m_resource.find(name) != m_resource.end();
     }
@@ -73,7 +73,7 @@ class ResourceContainer
 
     //===========================================================================
     //
-    void remove (const std::string& name)
+    void remove(const std::string& name)
     {
       if (this->exists(name))
         m_resource.erase(name);

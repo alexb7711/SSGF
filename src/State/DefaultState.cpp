@@ -15,9 +15,6 @@
  *
  * =====================================================================================
  */
-
-#include <stdlib.h>
-
 #include "DefaultState.hpp"
 #include "../Game.hpp"
 
@@ -31,17 +28,18 @@
 DefaultState::DefaultState(Game* game):
   BaseState(game),
   m_circle(10.f),
-  m_object(ObjectHandler<Object>()),
-  m_resource_handler(ResourceHandler::Instance()),
+  m_object(ObjectHandler<Object>()),                // TODO::I think Game should have these
+  m_resource_handler(ResourceHandler::Instance()),  // TODO::I think Game should have these
   m_stack(game->getWindow())
 {
   m_circle.setFillColor(sf::Color::Green);
   m_circle_pos = m_circle.getPosition();
 
   m_resource_handler->texture.add("SpriteSheet");
-
-  // Testing Dragon
   m_dragon.setTexture(m_resource_handler->texture.get("SpriteSheet"));
+  
+  // Testing TileMap
+  m_game->m_tile_map->loadMap("map.txt");
 
   return;
 }
@@ -58,9 +56,8 @@ void DefaultState::updateState(const int& elapsed_time)
   m_circle.setPosition(m_circle_pos);
   m_stack.update();
   m_FPS.update();
-  
-  // Testing Dragon
   m_dragon.update(elapsed_time);
+
   return;
 }
 
@@ -76,8 +73,6 @@ void DefaultState::renderState(sf::RenderTarget* renderer)
   renderer->draw(m_circle);
   m_stack.render(renderer);
   m_FPS.render(renderer);
-
-  // Testing Dragon
   m_dragon.render(renderer);
   return;
 }
@@ -109,7 +104,7 @@ void DefaultState::handleInput()
   }
   else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
   {
-    p_game->setPopStack();
+    m_game->setPopStack();
   }
   return;
 }

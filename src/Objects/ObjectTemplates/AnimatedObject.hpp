@@ -81,7 +81,7 @@ class AnimatedObject : public Object
     void updateAnimation(const int& elapsed_time)
     {
       m_elapsed_time += elapsed_time;
-      std::cout << m_elapsed_time << std::endl;
+//      std::cout << m_elapsed_time << std::endl;
 
       if (m_frame.size() > 0 && m_elapsed_time >= m_delay)
       {

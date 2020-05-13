@@ -32,6 +32,7 @@ GUI	GUI/NonClickableWidget.hpp	/^namespace GUI$/;"	n
 GUI	GUI/Widget.hpp	/^namespace GUI$/;"	n
 Game	Game.cpp	/^Game::Game():$/;"	f	class:Game
 Game	Game.hpp	/^class Game $/;"	c
+Instance	Objects/Map/TileMap.cpp	/^TileMap* TileMap::Instance()$/;"	f	class:TileMap	typeref:typename:TileMap *
 Instance	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler* ResourceHandler::Instance()$/;"	f	class:ResourceHandler	typeref:typename:ResourceHandler *
 Instance	Utilities/Clock.hpp	/^      static sf::Clock* Instance()$/;"	f	class:util::Clock	typeref:typename:sf::Clock *
 NonClickableWidget	GUI/NonClickableWidget.hpp	/^    NonClickableWidget(std::string type):$/;"	f	class:GUI::NonClickableWidget
@@ -49,6 +50,11 @@ ResourceHandler	ResourceHandler/ResourceHandler.cpp	/^ResourceHandler::ResourceH
 ResourceHandler	ResourceHandler/ResourceHandler.hpp	/^class ResourceHandler $/;"	c
 StaticAnimatedAnimatedObject	Objects/ObjectTemplates/StaticAnimatedObject.hpp	/^class StaticAnimatedAnimatedObject : public AnimatedObject$/;"	c
 StaticObject	Objects/ObjectTemplates/StaticObject.hpp	/^class StaticObject : public Object $/;"	c
+Tile	Objects/Map/Tile.hpp	/^struct Tile$/;"	s
+TileInfo	Objects/Map/Tile.hpp	/^struct TileInfo$/;"	s
+TileMap	Objects/Map/TileMap.cpp	/^TileMap::TileMap()$/;"	f	class:TileMap
+TileMap	Objects/Map/TileMap.hpp	/^class TileMap : public StaticObject$/;"	c
+TileMapIO	Objects/Map/TileMapIO.cpp	/^TileMapIO::TileMapIO()$/;"	f	class:TileMapIO
 Widget	GUI/Widget.hpp	/^    Widget(std::string type):$/;"	f	class:GUI::Widget
 Widget	GUI/Widget.hpp	/^  class Widget $/;"	c	namespace:GUI
 _ANIMATED_OBJECT_H_	Objects/ObjectTemplates/AnimatedObject.hpp	/^#define _ANIMATED_OBJECT_H_ /;"	d
@@ -69,6 +75,8 @@ _RESOURCE_CONTAINER_HPP_	ResourceHandler/ResourceContainer.hpp	/^#define _RESOUR
 _RESOURCE_HANDLER_HPP_	ResourceHandler/ResourceHandler.hpp	/^#define _RESOURCE_HANDLER_HPP_ /;"	d
 _STATIC_ANIMATED_OBJECT_H_	Objects/ObjectTemplates/StaticAnimatedObject.hpp	/^#define _STATIC_ANIMATED_OBJECT_H_$/;"	d
 _STILL_OBJECT_H_	Objects/ObjectTemplates/StaticObject.hpp	/^#define _STILL_OBJECT_H_ /;"	d
+_TILE_H_	Objects/Map/Tile.hpp	/^#define _TILE_H_$/;"	d
+_TILE_MAP_H_	Objects/Map/TileMap.hpp	/^#define _TILE_MAP_H_$/;"	d
 _WIDGET_H_	GUI/Widget.hpp	/^#define _WIDGET_H_ /;"	d
 add	ResourceHandler/ResourceContainer.hpp	/^    void add(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 addFrame	Objects/ObjectTemplates/AnimatedObject.hpp	/^    virtual void addFrame(sf::IntRect frame) $/;"	f	class:AnimatedObject	typeref:typename:void
@@ -77,7 +85,7 @@ calculatePositions	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::calculate
 deleteObject	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::deleteObject(unsigned amount)$/;"	f	class:ObjectHandler	typeref:typename:void
 deleteObject	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::deleteObject(unsigned amount, unsigned index)$/;"	f	class:ObjectHandler	typeref:typename:void
 execute	GUI/Button.cpp	/^  void Button::execute()$/;"	f	class:GUI::Button	typeref:typename:void
-exists	ResourceHandler/ResourceContainer.hpp	/^    bool exists (const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:bool
+exists	ResourceHandler/ResourceContainer.hpp	/^    bool exists(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:bool
 font	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Font>        font;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Font>
 get	ResourceHandler/ResourceContainer.hpp	/^    const Resource& get(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:const Resource &
 getFullName	ResourceHandler/ResourceContainer.hpp	/^    std::string getFullName(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:std::string
@@ -91,8 +99,10 @@ handleEvents	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::handleEvents()$
 handleEvents	State/BaseState.hpp	/^    virtual void handleEvents(sf::Event e)                {}$/;"	f	class:BaseState	typeref:typename:void
 handleEvents	State/DefaultState.cpp	/^void DefaultState::handleEvents(sf::Event e)$/;"	f	class:DefaultState	typeref:typename:void
 handleInput	State/DefaultState.cpp	/^void DefaultState::handleInput()$/;"	f	class:DefaultState	typeref:typename:void
+info	Objects/Map/Tile.hpp	/^  TileInfo info;$/;"	m	struct:Tile	typeref:typename:TileInfo
 isClicked	GUI/Button.cpp	/^  void Button::isClicked()$/;"	f	class:GUI::Button	typeref:typename:void
 isHovering	GUI/Button.cpp	/^  bool Button::isHovering(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:bool
+loadMap	Objects/Map/TileMap.cpp	/^void TileMap::loadMap(std::string map_name)$/;"	f	class:TileMap	typeref:typename:void
 m_FPS	State/DefaultState.hpp	/^    FPSMonitor m_FPS;$/;"	m	class:DefaultState	typeref:typename:FPSMonitor
 m_button	GUI/Button.hpp	/^    sf::RectangleShape m_button;$/;"	m	class:GUI::Button	typeref:typename:sf::RectangleShape
 m_button_spacing	GUI/CenterStackWidget.hpp	/^  float                m_button_spacing;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:float
@@ -111,35 +121,43 @@ m_fps	GUI/FPSMonitor.hpp	/^    float m_fps      = 0;$/;"	m	class:FPSMonitor	type
 m_fpsTimer	GUI/FPSMonitor.hpp	/^    sf::Clock m_fpsTimer;$/;"	m	class:FPSMonitor	typeref:typename:sf::Clock
 m_frame	Objects/ObjectTemplates/AnimatedObject.hpp	/^    std::vector<sf::IntRect> m_frame;$/;"	m	class:AnimatedObject	typeref:typename:std::vector<sf::IntRect>
 m_frameCount	GUI/FPSMonitor.hpp	/^    int m_frameCount = 0;$/;"	m	class:FPSMonitor	typeref:typename:int
+m_game	State/BaseState.hpp	/^    Game* m_game;$/;"	m	class:BaseState	typeref:typename:Game *
+m_map	Objects/Map/TileMap.hpp	/^    std::vector<std::vector<Tile>> m_map;$/;"	m	class:TileMap	typeref:typename:std::vector<std::vector<Tile>>
+m_needs_update	Objects/Map/TileMap.hpp	/^    bool                           m_needs_update = false;$/;"	m	class:TileMap	typeref:typename:bool
 m_object	Objects/ObjectHandler.hpp	/^    std::vector<Object*> m_object;$/;"	m	class:ObjectHandler	typeref:typename:std::vector<Object * >
 m_object	State/DefaultState.hpp	/^    ObjectHandler<Object>  m_object;$/;"	m	class:DefaultState	typeref:typename:ObjectHandler<Object>
 m_popState	Game.hpp	/^    bool                   m_popState = false;$/;"	m	class:Game	typeref:typename:bool
 m_quit	Game.hpp	/^    bool                   m_quit     = false;$/;"	m	class:Game	typeref:typename:bool
 m_resource	ResourceHandler/ResourceContainer.hpp	/^    std::map<std::string, Resource> m_resource;$/;"	m	class:ResourceContainer	typeref:typename:std::map<std::string,Resource>
+m_resource_handler	Objects/Map/TileMap.hpp	/^    ResourceHandler*               m_resource_handler;$/;"	m	class:TileMap	typeref:typename:ResourceHandler *
 m_resource_handler	State/DefaultState.hpp	/^    ResourceHandler*       m_resource_handler;$/;"	m	class:DefaultState	typeref:typename:ResourceHandler *
 m_sprite	Objects/ObjectTemplates/Object.hpp	/^    sf::Sprite  m_sprite;$/;"	m	class:Object	typeref:typename:sf::Sprite
 m_stack	State/DefaultState.hpp	/^    GUI::CenterStackWidget m_stack;$/;"	m	class:DefaultState	typeref:typename:GUI::CenterStackWidget
 m_state_stack	Game.hpp	/^    std::stack<BaseState*> m_state_stack;$/;"	m	class:Game	typeref:typename:std::stack<BaseState * >
 m_text	GUI/FPSMonitor.hpp	/^    sf::Text  m_text;$/;"	m	class:FPSMonitor	typeref:typename:sf::Text
+m_texture	Objects/Map/TileMap.hpp	/^    sf::Texture                    m_texture;$/;"	m	class:TileMap	typeref:typename:sf::Texture
 m_texture	Objects/ObjectTemplates/Object.hpp	/^    sf::Texture m_texture;$/;"	m	class:Object	typeref:typename:sf::Texture
+m_tile_dictionary	Objects/Map/TileMap.hpp	/^    std::map<char, sf::Vector2i>   m_tile_dictionary;$/;"	m	class:TileMap	typeref:typename:std::map<char,sf::Vector2i>
+m_tile_map	Game.hpp	/^    TileMap* m_tile_map;$/;"	m	class:Game	typeref:typename:TileMap *
+m_tile_width	Objects/Map/TileMap.hpp	/^    uint                           m_tile_width   = 50;      \/\/ Assuming a square$/;"	m	class:TileMap	typeref:typename:uint
 m_widget_type	GUI/Widget.hpp	/^    std::string  m_widget_type;$/;"	m	class:GUI::Widget	typeref:typename:std::string
 m_window	Game.hpp	/^    sf::RenderWindow*      m_window;$/;"	m	class:Game	typeref:typename:sf::RenderWindow *
 music	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Music>       music;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Music>
-p_game	State/BaseState.hpp	/^    Game* p_game;$/;"	m	class:BaseState	typeref:typename:Game *
 p_widget_vector	GUI/CenterStackWidget.hpp	/^  std::vector<Widget*> p_widget_vector;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:std::vector<Widget * >
 p_window	GUI/CenterStackWidget.hpp	/^  sf::RenderWindow*    p_window;$/;"	m	class:GUI::CenterStackWidget	typeref:typename:sf::RenderWindow *
 popState	Game.cpp	/^void Game::popState()$/;"	f	class:Game	typeref:typename:void
 pushState	Game.cpp	/^void Game::pushState(BaseState* state)$/;"	f	class:Game	typeref:typename:void
 quitGame	Game.cpp	/^void Game::quitGame()$/;"	f	class:Game	typeref:typename:void
-remove	ResourceHandler/ResourceContainer.hpp	/^    void remove (const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
+remove	ResourceHandler/ResourceContainer.hpp	/^    void remove(const std::string& name)$/;"	f	class:ResourceContainer	typeref:typename:void
 render	GUI/Button.cpp	/^  void Button::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::Button	typeref:typename:void
 render	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::render(sf::RenderTarget* renderer)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 render	GUI/FPSMonitor.cpp	/^void FPSMonitor::render(sf::RenderTarget* renderer)$/;"	f	class:FPSMonitor	typeref:typename:void
+render	Objects/Map/TileMap.cpp	/^void TileMap::render(sf::RenderTarget* renderer)$/;"	f	class:TileMap	typeref:typename:void
 render	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::render(sf::RenderTarget* renderer)$/;"	f	class:ObjectHandler	typeref:typename:void
 render	Objects/ObjectTemplates/AnimatedObject.hpp	/^    void render(sf::RenderTarget* renderer)$/;"	f	class:AnimatedObject	typeref:typename:void
-render	Objects/ObjectTemplates/StaticObject.hpp	/^    virtual void render(sf::RenderTarget* renderer)$/;"	f	class:StaticObject	typeref:typename:void
 renderState	State/DefaultState.cpp	/^void DefaultState::renderState(sf::RenderTarget* renderer)$/;"	f	class:DefaultState	typeref:typename:void
 run	Game.cpp	/^void Game::run()$/;"	f	class:Game	typeref:typename:void
+screen_coords	Objects/Map/Tile.hpp	/^  sf::Vector2i screen_coords;$/;"	m	struct:Tile	typeref:typename:sf::Vector2i
 setAnimationDelay	Objects/ObjectTemplates/AnimatedObject.hpp	/^    virtual void setAnimationDelay(float delay)$/;"	f	class:AnimatedObject	typeref:typename:void
 setFrameVector	Objects/ObjectTemplates/AnimatedObject.hpp	/^    virtual void setFrameVector(std::vector<sf::IntRect> frames)$/;"	f	class:AnimatedObject	typeref:typename:void
 setFunction	GUI/Button.cpp	/^void Button::setFunction()$/;"	f	class:GUI::Button	typeref:typename:void
@@ -147,20 +165,26 @@ setPopStack	Game.cpp	/^void Game::setPopStack()$/;"	f	class:Game	typeref:typenam
 setPosition	GUI/Button.cpp	/^  void Button::setPosition(sf::Vector2f& position)$/;"	f	class:GUI::Button	typeref:typename:void
 setQuitGame	Game.cpp	/^void Game::setQuitGame()$/;"	f	class:Game	typeref:typename:void
 setSize	GUI/Button.cpp	/^  void Button::setSize(sf::Vector2f size)$/;"	f	class:GUI::Button	typeref:typename:void
+setTexture	Objects/Map/TileMap.cpp	/^void TileMap::setTexture(sf::Texture& texture)$/;"	f	class:TileMap	typeref:typename:void
 setTexture	Objects/ObjectTemplates/Object.hpp	/^    virtual void setTexture(sf::Texture texture)$/;"	f	class:Object	typeref:typename:void
+setTileDictPair	Objects/Map/TileMap.cpp	/^void TileMap::setTileDictPair(char key, sf::Vector2i coord)$/;"	f	class:TileMap	typeref:typename:void
+setTileWidth	Objects/Map/TileMap.cpp	/^void TileMap::setTileWidth(uint width)$/;"	f	class:TileMap	typeref:typename:void
 setTitle	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::setTitle(const std::string& title)$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 soundBuffer	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::SoundBuffer> soundBuffer;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::SoundBuffer>
 spawnObject	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::spawnObject(Object* newObject)$/;"	f	class:ObjectHandler	typeref:typename:void
 spawnObject	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::spawnObject(std::vector<Object> newObject)$/;"	f	class:ObjectHandler	typeref:typename:void
 texture	ResourceHandler/ResourceHandler.hpp	/^    ResourceContainer<sf::Texture>     texture;$/;"	m	class:ResourceHandler	typeref:typename:ResourceContainer<sf::Texture>
+texture_coords	Objects/Map/Tile.hpp	/^  sf::Vector2i texture_coords;$/;"	m	struct:TileInfo	typeref:typename:sf::Vector2i
+type	Objects/Map/Tile.hpp	/^  char type = '0';$/;"	m	struct:TileInfo	typeref:typename:char
 uint	GUI/CenterStackWidget.hpp	/^typedef unsigned int uint; $/;"	t	typeref:typename:unsigned int
 update	GUI/Button.cpp	/^  void Button::update(sf::RenderWindow* window)$/;"	f	class:GUI::Button	typeref:typename:void
 update	GUI/CenterStackWidget.cpp	/^void CenterStackWidget::update()$/;"	f	class:GUI::CenterStackWidget	typeref:typename:void
 update	GUI/FPSMonitor.cpp	/^void FPSMonitor::update()$/;"	f	class:FPSMonitor	typeref:typename:void
+update	Objects/Map/TileMap.cpp	/^void TileMap::update(const int& elapsed_time)$/;"	f	class:TileMap	typeref:typename:void
 update	Objects/NPC/Dragon.cpp	/^void Dragon::update(const int& elapsed_time)$/;"	f	class:Dragon	typeref:typename:void
 update	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::update(int& elapsed_time)$/;"	f	class:ObjectHandler	typeref:typename:void
-update	Objects/ObjectTemplates/StaticObject.hpp	/^    virtual void update(const int& elapsed_time)$/;"	f	class:StaticObject	typeref:typename:void
 updateAnimation	Objects/ObjectTemplates/AnimatedObject.hpp	/^    void updateAnimation(const int& elapsed_time)$/;"	f	class:AnimatedObject	typeref:typename:void
+updateMap	Objects/Map/TileMap.cpp	/^void TileMap::updateMap(std::vector<std::string> map_update)$/;"	f	class:TileMap	typeref:typename:void
 updatePosition	Objects/NPC/Dragon.cpp	/^void Dragon::updatePosition()$/;"	f	class:Dragon	typeref:typename:void
 updateState	State/BaseState.hpp	/^    virtual void updateState(const int& elapsed_time)     {}$/;"	f	class:BaseState	typeref:typename:void
 updateState	State/DefaultState.cpp	/^void DefaultState::updateState(const int& elapsed_time)$/;"	f	class:DefaultState	typeref:typename:void
@@ -174,3 +198,5 @@ wipeObjects	Objects/ObjectHandler.cpp	/^void ObjectHandler<Object>::wipeObjects(
 ~Game	Game.cpp	/^Game::~Game()$/;"	f	class:Game
 ~ObjectHandler	Objects/ObjectHandler.cpp	/^ObjectHandler<Object>::~ObjectHandler()$/;"	f	class:ObjectHandler
 ~ResourceContainer	ResourceHandler/ResourceContainer.hpp	/^    ~ResourceContainer()$/;"	f	class:ResourceContainer
+~TileMap	Objects/Map/TileMap.cpp	/^TileMap::~TileMap()$/;"	f	class:TileMap
+~TileMapIO	Objects/Map/TileMapIO.cpp	/^TileMapIO::~TileMapIO()$/;"	f	class:TileMapIO

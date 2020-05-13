@@ -8,8 +8,12 @@
 //===============================================================================
 //
 Game::Game():
-  m_window(new sf::RenderWindow(sf::VideoMode(1280, 720), "Game Title")),
-  m_clock(util::Clock::Instance())
+  // Public
+  m_tile_map(TileMap::Instance()),
+
+  // Private
+  m_clock(util::Clock::Instance()),
+  m_window(new sf::RenderWindow(sf::VideoMode(1280, 720), "Game Title"))
 {
   m_state_stack.push(new DefaultState(this));
   m_window->setPosition({m_window->getPosition().x, 0});
@@ -45,7 +49,7 @@ void Game::run()
       elapsed_time -= sf::milliseconds(milliseconds_per_update);
     }
 
-//    m_state_stack.top()->updateState(elapsed_time.asMilliseconds());
+    m_state_stack.top()->updateState(elapsed_time.asMilliseconds());
     
     this->handleEvent();
     m_window->clear();

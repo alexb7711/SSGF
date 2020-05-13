@@ -9,8 +9,10 @@
 
 // C/C++ Standard Library
 
-// Custom Header Files
+// SFML Libraries
 #include <SFML/Graphics.hpp>
+
+// Custom Header Files
 
 // Forward Declarations
 class Game;
@@ -21,7 +23,7 @@ class BaseState
 {
   public: 
     BaseState(Game* game):
-      p_game(game)
+      m_game(game)
     {}
 
     virtual void updateState(const int& elapsed_time)     {}
@@ -32,7 +34,7 @@ class BaseState
     virtual ~BaseState() = default;
 
   protected:
-    Game* p_game;
+    Game* m_game;
 
 };
 

@@ -10,6 +10,7 @@ SRC    = main.cpp                                   \
 	 ../src/GUI/FPSMonitor.cpp                  \
 	 ../src/Objects/NPC/Dragon.cpp		    \
 	 ../src/Objects/ObjectHandler.cpp	    \
+	 ../src/Objects/Map/TileMap.cpp		    \
 	 ../src/State/DefaultState.cpp              \
 	 ../src/ResourceHandler/ResourceHandler.cpp \
 
