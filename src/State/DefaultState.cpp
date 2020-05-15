@@ -39,7 +39,7 @@ DefaultState::DefaultState(Game* game):
   m_dragon.setTexture(m_resource_handler->texture.get("SpriteSheet"));
   
   // Testing TileMap
-  m_game->m_tile_map->loadMap("map.txt");
+  m_game->m_tile_map->loadMap("Default");
 
   return;
 }

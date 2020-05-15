@@ -38,44 +38,30 @@ TileMap* TileMap::Instance()
  */
 void TileMap::update(const int& elapsed_time)
 {}
+
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  TileMap
+ *      Method:  TileMap :: loadDictionary
+ * Description: 
+ *--------------------------------------------------------------------------------------
+ */
+void TileMap::loadDictionary(std::string map_name)
+{
+  readFromFileCallback(&TileMap::extractMapData, map_name); 
+  return;
+}
     
 /*
  *--------------------------------------------------------------------------------------
  *       Class:  TileMap
  *      Method:  TileMap :: setMap
- * Description: TileMapIO
- *
+ * Description: 
  *--------------------------------------------------------------------------------------
  */
 void TileMap::loadMap(std::string map_name)
 {
- std::ifstream file_in(map_name);
- std::string line;
-
- if (file_in.is_open())
- {
-   for (uint y = 0; std::getline(file_in, line); ++y)
-   {
-     std::vector<Tile> temp_vec;
-     m_map.push_back(temp_vec);
-
-     for (uint x = 0; x < line.size(); ++x)
-     {
-         Tile temp_tile; 
-         m_map[y].push_back(temp_tile);
-
-         m_map[y][x].info.type           = line[x];
-         m_map[y][x].info.texture_coords = sf::Vector2i(x,y);
-         m_map[y][x].screen_coords.x     = x * m_tile_width + x;
-         m_map[y][x].screen_coords.y     = y * m_tile_width + y;
-
-         std::cout << m_map[x][y].info.type << std::endl;
-     }
-   }
- }
- else
-   printf("ERROR: COULD NOT LOAD FILE!\n");
-
+  readFromFileCallback(&TileMap::extractMapData, map_name);
   return;
 }
 
@@ -89,24 +75,6 @@ void TileMap::loadMap(std::string map_name)
 void TileMap::setTexture(sf::Texture& texture)
 {
   m_texture = texture;
-  return;
-}
-
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  TileMap
- *      Method:  TileMap :: setTilesDictPair
- * Description: 
- *--------------------------------------------------------------------------------------
- */
-void TileMap::setTileDictPair(char key, sf::Vector2i coord)
-{
-  std::map<char, sf::Vector2i>::iterator it;
-  it = m_tile_dictionary.find(key);
-  
-  if (it != m_tile_dictionary.end())
-    m_tile_dictionary[key] = coord; 
-
   return;
 }
 
@@ -160,8 +128,72 @@ TileMap::~TileMap()
  * Description:  
  *--------------------------------------------------------------------------------------
  */
-TileMap::TileMap()
+TileMap::TileMap():
+  m_map_text_file("maps.txt")
 {}
+
+
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  TileMap
+ *      Method:  TileMap :: extractMapData
+ * Description:  
+ *--------------------------------------------------------------------------------------
+ */
+void TileMap::extractMapData(std::ifstream& file_in, std::string& line)
+{
+  for (uint y = 0; std::getline(file_in, line, ' '); ++y)
+  {
+    std::vector<Tile> temp_vec;
+    m_map.push_back(temp_vec);
+
+    for (uint x = 0; x < line.size() && line[x] != '\n'; ++x)
+    {
+      Tile temp_tile; 
+      m_map[y].push_back(temp_tile);
+
+      m_map[y][x].info.type           = line[x];
+      m_map[y][x].info.texture_coords = sf::Vector2i(x,y);
+      m_map[y][x].screen_coords.x     = x * m_tile_width + x;
+      m_map[y][x].screen_coords.y     = y * m_tile_width + y;
+      
+      std::cout << m_map[y][x].info.type << std::endl;
+    }
+
+    if (line[0] == '[') 
+      break;
+  }
+
+  return;
+}
+
+/*
+ *--------------------------------------------------------------------------------------
+ *       Class:  TileMap
+ *      Method:  TileMap :: readFromFileCallback
+ * Description:  Callback method used to read from config files. 
+ *--------------------------------------------------------------------------------------
+ */
+void TileMap::readFromFileCallback(void (TileMap::*method)(std::ifstream&, std::string&),
+                                   std::string& map_name)
+{
+  std::ifstream file_in(m_map_text_file);
+  std::string line;
+
+  if (file_in.is_open())
+  {
+    while (std::getline(file_in, line))
+    {
+      (this->*method)(file_in, map_name);
+    }
+
+    file_in.close();
+  }
+   else
+     printf("ERROR: COULD NOT LOAD FILE!\n");
+
+  return;
+}
 
 /*
  *--------------------------------------------------------------------------------------

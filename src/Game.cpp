@@ -31,8 +31,6 @@ void Game::run()
   sf::Time lag                 = sf::Time::Zero;
   int milliseconds_per_update  = 16; // milliseconds - About 62 FPS
 
-//  sf::Clock clock;
-
   while (m_window->isOpen() && !m_state_stack.empty())
   {
     // Reset the timer

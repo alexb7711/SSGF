@@ -41,9 +41,9 @@ class TileMap : public StaticObject
     static TileMap* Instance();
     
     void render(sf::RenderTarget* renderer) override;
+    void loadDictionary(std::string map_name);
     void loadMap(std::string map_name);
     void setTexture(sf::Texture& texture);
-    void setTileDictPair(char key, sf::Vector2i coord);
     void setTileWidth(uint width);
     void update(const int& elapsed_time)    override;
 
@@ -52,10 +52,14 @@ class TileMap : public StaticObject
   private:
     // Private Methods
     TileMap();
+    void extractMapData(std::ifstream& file_in, std::string& line);
+    void readFromFileCallback(void (TileMap::*method)(std::ifstream&, std::string&),
+                                   std::string& map_name);
     void updateMap(std::vector<std::string> map_update);
 
     // Private Member Variables
     std::vector<std::vector<Tile>> m_map;
+    std::string                    m_map_text_file;
     ResourceHandler*               m_resource_handler;
     sf::Texture                    m_texture;
     std::map<char, sf::Vector2i>   m_tile_dictionary;
