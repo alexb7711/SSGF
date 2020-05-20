@@ -1,2 +1,6 @@
+// Layout:
+// [Map Name] 
+// identifyer x y width [height]
+
 [Default]
-0 0 256
+0 0 0 256

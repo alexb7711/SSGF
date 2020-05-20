@@ -40,6 +40,7 @@ DefaultState::DefaultState(Game* game):
   
   // Testing TileMap
   m_game->m_tile_map->loadMap("Default");
+  m_game->m_tile_map->loadDictionary("Default");
 
   return;
 }

@@ -37,7 +37,6 @@ ResourceHandler* ResourceHandler::Instance()
   return &handler;
 }
 
-
 //=========//
 // PRIVATE //
 //=========//

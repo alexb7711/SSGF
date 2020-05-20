@@ -38,4 +38,11 @@ struct Tile
   sf::Vector2i screen_coords;
 };
 
+struct tileDefinition
+{
+  char identifyer;
+  sf::Vector2i coord;
+  uint w;
+};
+
 #endif

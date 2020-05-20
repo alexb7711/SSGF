@@ -1,3 +1,7 @@
+// Layout:
+// [Map Name] 
+// identifyer x y
+
 [Default]
 0 1 1
 0 1 1

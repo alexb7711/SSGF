@@ -24,6 +24,7 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <sstream>
 #include <vector>
 
 // SFML Libraries
@@ -52,17 +53,21 @@ class TileMap : public StaticObject
   private:
     // Private Methods
     TileMap();
+    bool ignoreLine(std::string& string);
+    void extractDictData(std::ifstream& file_in, std::string& line);
     void extractMapData(std::ifstream& file_in, std::string& line);
     void readFromFileCallback(void (TileMap::*method)(std::ifstream&, std::string&),
+                                   std::string& file,
                                    std::string& map_name);
     void updateMap(std::vector<std::string> map_update);
 
     // Private Member Variables
     std::vector<std::vector<Tile>> m_map;
+    std::string                    m_dict_text_file;
     std::string                    m_map_text_file;
     ResourceHandler*               m_resource_handler;
     sf::Texture                    m_texture;
-    std::map<char, sf::Vector2i>   m_tile_dictionary;
+    std::map<char, tileDefinition> m_tile_dictionary;
     uint                           m_tile_width   = 50;      // Assuming a square
     bool                           m_needs_update = false;
 };

@@ -48,7 +48,7 @@ void TileMap::update(const int& elapsed_time)
  */
 void TileMap::loadDictionary(std::string map_name)
 {
-  readFromFileCallback(&TileMap::extractDictData, m_dict_text_file, map_name); 
+  readFromFileCallback(&TileMap::extractDictData, map_name); 
   return;
 }
     
@@ -61,7 +61,7 @@ void TileMap::loadDictionary(std::string map_name)
  */
 void TileMap::loadMap(std::string map_name)
 {
-  readFromFileCallback(&TileMap::extractMapData, m_map_text_file, map_name);
+  readFromFileCallback(&TileMap::extractMapData, map_name);
   return;
 }
 
@@ -129,7 +129,6 @@ TileMap::~TileMap()
  *--------------------------------------------------------------------------------------
  */
 TileMap::TileMap():
-  m_dict_text_file("Dictionary.txt"),
   m_map_text_file("maps.txt")
 {}
 
@@ -154,45 +153,12 @@ TileMap::TileMap():
  */
 void TileMap::extractDictData(std::ifstream& file_in, std::string& line)
 {
-  for (uint y = 0; std::getline(file_in, line); ++y)
+  for (uint y = 0; std::getline(file_in, line, ' '); ++y)
   {
-    if (line[0] == '[') 
-      break;
-     
-    // This variable is used to place the next valid input into the map.
-    int x = 0;
-    tileDefinition temp_def;
-    std::stringstream temp_ss(line);
-
-    // Use temporary index i to search through data
-    for (uint i = 0; temp_ss.good(); ++i)
+    for (uint x = 0; x < line.size() && line[x] != '\n'; ++x)
     {
-      std::string word;
-      std::getline(temp_ss, word, ' ');
 
-      switch (x)
-      {
-        case 0:
-          temp_def.identifyer = *word.c_str();
-          ++x;
-          break;
-        case 1:
-          temp_def.coord.x = std::atoi(word.c_str());
-          ++x;
-          continue;
-        case 2:
-          temp_def.coord.y = std::atoi(word.c_str());
-          ++x;
-          continue;
-        case 3:
-          temp_def.w = (uint) std::atoi(word.c_str());
-          ++x;
-          continue;
-        default:
-          break;
-      };
     }
-
   }
 
   return;
@@ -207,41 +173,27 @@ void TileMap::extractDictData(std::ifstream& file_in, std::string& line)
  */
 void TileMap::extractMapData(std::ifstream& file_in, std::string& line)
 {
-  for (uint y = 0; std::getline(file_in, line); ++y)
+  for (uint y = 0; std::getline(file_in, line, ' '); ++y)
   {
     std::vector<Tile> temp_vec;
     m_map.push_back(temp_vec);
-    
+
+    for (uint x = 0; x < line.size() && line[x] != '\n'; ++x)
+    {
+      Tile temp_tile; 
+      m_map[y].push_back(temp_tile);
+
+      m_map[y][x].info.type           = line[x];
+      m_map[y][x].info.texture_coords = sf::Vector2i(x,y);
+      m_map[y][x].screen_coords.x     = x * m_tile_width + x;
+      m_map[y][x].screen_coords.y     = y * m_tile_width + y;
+            
+      std::cout << x << std::endl;
+//      std::cout << m_map[y][x].info.type << std::endl;
+    }
+
     if (line[0] == '[') 
       break;
-     
-    // This variable is used to place the next valid input into the map.
-    int x = 0;
-
-    // Use temporary index i to search through data
-    for (uint i = 0; i < line.size(); ++i)
-    {
-      switch (line[i])
-      {
-        // Ignore spaces and new line characters.
-        case ' ':
-        case '\n':
-          continue;
-        default:
-          Tile temp_tile; 
-          m_map[y].push_back(temp_tile);
-          
-          // Line[i] is used to place correct value in position x
-          m_map[y][x].info.type           = line[i];
-          m_map[y][x].info.texture_coords = sf::Vector2i(x,y);
-          m_map[y][x].screen_coords.x     = x * m_tile_width + x;
-          m_map[y][x].screen_coords.y     = y * m_tile_width + y;
-         
-          // Increment x by one because a valid input was found
-          ++x;
-          break;
-      }
-    }
   }
 
   return;
@@ -255,10 +207,9 @@ void TileMap::extractMapData(std::ifstream& file_in, std::string& line)
  *--------------------------------------------------------------------------------------
  */
 void TileMap::readFromFileCallback(void (TileMap::*method)(std::ifstream&, std::string&),
-                                   std::string& file,
                                    std::string& map_name)
 {
-  std::ifstream file_in(file);
+  std::ifstream file_in(m_map_text_file);
   std::string line;
 
   if (file_in.is_open())
